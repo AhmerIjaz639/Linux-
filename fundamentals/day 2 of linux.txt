@@ -1,0 +1,714 @@
+ahmerijaz@DESKTOP-9HRD2U5:~$ ls
+SackRED.tr  ns-3-dev                 ns-allinone-2.35.tar.gz.1  out.nam
+bootcamp    ns-allinone-2.35         ns-allinone-2.35.tar.gz.2
+nam.log     ns-allinone-2.35.tar.gz  ns.tcl
+ahmerijaz@DESKTOP-9HRD2U5:~$ cd bootcamp
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp$ ls
+archive  cyber  day2.txt  fake_log.txt  mynotes.txt  nmap.txt  projects
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp$ cd cyber
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber$ ls
+toolkit
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber$ cd toolkit
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ ls
+exploitation  recon  reporting
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ cd ..
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber$ mkdir permissionsInlinux
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber$ ls
+permissionsInlinux  toolkit
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber$ cd permissionsInlinux
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ touch secrets.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ ls
+secrets.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ echo "This is secret."> secret.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ chmod 600 secret.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ ls -l secret.txt
+-rw------- 1 ahmerijaz ahmerijaz 16 Jun  5 15:33 secret.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ touch public.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ echo "This is a public file with some content" >public.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ chmod 444 public.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ ls -l public.txt
+-r--r--r-- 1 ahmerijaz ahmerijaz 40 Jun  5 15:34 public.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ touch backup.sh
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ echo " backing up files .." > backup.sh
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ chmod 700 backup.sh
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ ls -l backup.sh
+-rwx------ 1 ahmerijaz ahmerijaz 21 Jun  5 15:38 backup.sh
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ ./backup.sh
+./backup.sh: line 1: backing: command not found
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ chmod 777 backup.sh
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ ./backup.sh
+./backup.sh: line 1: backing: command not found
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ cat backup.sh
+ backing up files ..
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ echo " echo"backing up files.."" > backup.sh
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ cat backup.sh
+ echobacking up files..
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ echo " echo "backing up files.."" > backup.sh
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ cat backup.sh
+ echo backing up files..
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ rm backup.sh
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ ls
+public.txt  secret.txt  secrets.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ cat secrets.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ rm secrets.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ ls
+public.txt  secret.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ echo '#!/
+bin/bash' > backup.sh
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ echo ' echo " backing up files..."' > backup.sh
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ cat backup.sh
+ echo " backing up files..."
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ chmod 755 backup.sh
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ ./backup.sh
+ backing up files...
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/permissionsInlinux$ cd ..
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber$ ls
+permissionsInlinux  toolkit
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber$ cd /toolkit
+-bash: cd: /toolkit: No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber$ cd toolkit
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ ls
+exploitation  recon  reporting
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ cd recon
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit/recon$ chmod 640 notes.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit/recon$ ls -l notes.txt
+-rw-r----- 1 ahmerijaz ahmerijaz 27 Jun  2 22:15 notes.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit/recon$ cd ..
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ cd exploitation
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit/exploitation$ chmod 444  notes.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit/exploitation$ ls -l notes.txt
+-r--r--r-- 1 ahmerijaz ahmerijaz 25 Jun  2 22:19 notes.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit/exploitation$ cd ..
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ cd reporting
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit/reporting$ chmod 600template.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit/reporting$ ls -l template.txt
+-rw------- 1 ahmerijaz ahmerijaz 15 Jun  2 22:20 template.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit/reporting$ chmod 640notes.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit/reporting$ ls -l notes.txt
+-rw-r----- 1 ahmerijaz ahmerijaz 22 Jun  2 22:19 notes.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit/reporting$ cd ..
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ touch run_toolkit.sh
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ #!/bin/bash
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ echo ' echo" Toolkit running.."'>run_toolkit.sh
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ chmod 750 run-toolkit.sh
+chmod: cannot access 'run-toolkit.sh': No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ chmod 750 run_toolki
+t.sh
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ ls -l run_toolkit.sh
+-rwxr-x--- 1 ahmerijaz ahmerijaz 26 Jun  5 15:57 run_toolkit.sh
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ ls -laR
+.:
+total 24
+drwxr-xr-x 5 ahmerijaz ahmerijaz 4096 Jun  5 15:56 .
+drwxr-xr-x 4 ahmerijaz ahmerijaz 4096 Jun  5 15:32 ..
+drwxr-xr-x 2 ahmerijaz ahmerijaz 4096 Jun  2 22:13 exploitation
+drwxr-xr-x 2 ahmerijaz ahmerijaz 4096 Jun  2 22:12 recon
+drwxr-xr-x 2 ahmerijaz ahmerijaz 4096 Jun  2 22:14 reporting
+-rwxr-x--- 1 ahmerijaz ahmerijaz   26 Jun  5 15:57 run_toolkit.sh
+
+./exploitation:
+total 12
+drwxr-xr-x 2 ahmerijaz ahmerijaz 4096 Jun  2 22:13 .
+drwxr-xr-x 5 ahmerijaz ahmerijaz 4096 Jun  5 15:56 ..
+-r--r--r-- 1 ahmerijaz ahmerijaz   25 Jun  2 22:19 notes.txt
+
+./recon:
+total 12
+drwxr-xr-x 2 ahmerijaz ahmerijaz 4096 Jun  2 22:12 .
+drwxr-xr-x 5 ahmerijaz ahmerijaz 4096 Jun  5 15:56 ..
+-rw-r----- 1 ahmerijaz ahmerijaz   27 Jun  2 22:15 notes.txt
+
+./reporting:
+total 16
+drwxr-xr-x 2 ahmerijaz ahmerijaz 4096 Jun  2 22:14 .
+drwxr-xr-x 5 ahmerijaz ahmerijaz 4096 Jun  5 15:56 ..
+-rw-r----- 1 ahmerijaz ahmerijaz   22 Jun  2 22:19 notes.txt
+-rw------- 1 ahmerijaz ahmerijaz   15 Jun  2 22:20 template.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
+systemd-timesync:x:996:996:systemd Time Synchronization:/:/usr/sbin/nologin
+dhcpcd:x:100:65534:DHCP Client Daemon,,,:/usr/lib/dhcpcd:/bin/false
+messagebus:x:101:101::/nonexistent:/usr/sbin/nologin
+syslog:x:102:102::/nonexistent:/usr/sbin/nologin
+systemd-resolve:x:991:991:systemd Resolver:/:/usr/sbin/nologin
+uuidd:x:103:103::/run/uuidd:/usr/sbin/nologin
+landscape:x:104:105::/var/lib/landscape:/usr/sbin/nologin
+polkitd:x:990:990:User for polkitd:/:/usr/sbin/nologin
+ahmerijaz:x:1000:1000:,,,:/home/ahmerijaz:/bin/bash
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ ca /ect/grou[
+ca: command not found
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ ca /ect/group
+ca: command not found
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,ahmerijaz
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:ahmerijaz
+fax:x:21:
+voice:x:22:
+cdrom:x:24:ahmerijaz
+floppy:x:25:ahmerijaz
+tape:x:26:
+sudo:x:27:ahmerijaz
+audio:x:29:ahmerijaz
+dip:x:30:ahmerijaz
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:ahmerijaz
+sasl:x:45:
+plugdev:x:46:ahmerijaz
+staff:x:50:
+games:x:60:
+users:x:100:ahmerijaz
+nogroup:x:65534:
+systemd-journal:x:999:
+systemd-network:x:998:
+crontab:x:997:
+systemd-timesync:x:996:
+input:x:995:
+sgx:x:994:
+kvm:x:993:
+render:x:992:
+messagebus:x:101:
+syslog:x:102:
+systemd-resolve:x:991:
+uuidd:x:103:
+_ssh:x:104:
+landscape:x:105:
+polkitd:x:990:
+admin:x:106:
+netdev:x:107:ahmerijaz
+ahmerijaz:x:1000:
+_cvsadmin:x:108:
+rdma:x:109:
+wireshark:x:110:
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo cat /etc/shadow
+[sudo] password for ahmerijaz:
+root:*:20094:0:99999:7:::
+daemon:*:20094:0:99999:7:::
+bin:*:20094:0:99999:7:::
+sys:*:20094:0:99999:7:::
+sync:*:20094:0:99999:7:::
+games:*:20094:0:99999:7:::
+man:*:20094:0:99999:7:::
+lp:*:20094:0:99999:7:::
+mail:*:20094:0:99999:7:::
+news:*:20094:0:99999:7:::
+uucp:*:20094:0:99999:7:::
+proxy:*:20094:0:99999:7:::
+www-data:*:20094:0:99999:7:::
+backup:*:20094:0:99999:7:::
+list:*:20094:0:99999:7:::
+irc:*:20094:0:99999:7:::
+_apt:*:20094:0:99999:7:::
+nobody:*:20094:0:99999:7:::
+systemd-network:!*:20094::::::
+systemd-timesync:!*:20094::::::
+dhcpcd:!:20094::::::
+messagebus:!:20094::::::
+syslog:!:20094::::::
+systemd-resolve:!*:20094::::::
+uuidd:!:20094::::::
+landscape:!:20094::::::
+polkitd:!*:20094::::::
+ahmerijaz:$y$j9T$Dg3MpqNlm1OGAMQ8bxE2l1$QqPA4aCchYihLA.FogFKHsV3HOPAIpiHylnL3W6bAP4:20579:0:99999:7:::
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ whoami
+ahmerijaz
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ id
+uid=1000(ahmerijaz) gid=1000(ahmerijaz) groups=1000(ahmerijaz),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),100(users),107(netdev)
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ cat /ect/groups
+cat: /ect/groups: No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ cat /ect/groups
+cat: /ect/groups: No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ cat /ect/group
+cat: /ect/group: No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ cat /etc/grou[
+cat: '/etc/grou[': No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,ahmerijaz
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:ahmerijaz
+fax:x:21:
+voice:x:22:
+cdrom:x:24:ahmerijaz
+floppy:x:25:ahmerijaz
+tape:x:26:
+sudo:x:27:ahmerijaz
+audio:x:29:ahmerijaz
+dip:x:30:ahmerijaz
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:ahmerijaz
+sasl:x:45:
+plugdev:x:46:ahmerijaz
+staff:x:50:
+games:x:60:
+users:x:100:ahmerijaz
+nogroup:x:65534:
+systemd-journal:x:999:
+systemd-network:x:998:
+crontab:x:997:
+systemd-timesync:x:996:
+input:x:995:
+sgx:x:994:
+kvm:x:993:
+render:x:992:
+messagebus:x:101:
+syslog:x:102:
+systemd-resolve:x:991:
+uuidd:x:103:
+_ssh:x:104:
+landscape:x:105:
+polkitd:x:990:
+admin:x:106:
+netdev:x:107:ahmerijaz
+ahmerijaz:x:1000:
+_cvsadmin:x:108:
+rdma:x:109:
+wireshark:x:110:
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ groups
+ahmerijaz adm dialout cdrom floppy sudo audio dip video plugdev users netdev
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo useradd -m -s /bin/bash testuser
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ id testuser
+uid=1001(testuser) gid=1001(testuser) groups=1001(testuser)
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo groupadd developer
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo usermod -aG developer testuser
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ id testuser
+uid=1001(testuser) gid=1001(testuser) groups=1001(testuser),1002(developer)
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo chown testuser/home/ahmerijaz/bootcamp/test.txt
+chown: cannot access '/home/ahmerijaz/bootcamp/test.txt': No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo chown testuser/home/ahmerijaz/bootcamp/day2
+chown: cannot access '/home/ahmerijaz/bootcamp/day2': No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo chown testuser/home/ahmerijaz/bootcamp/day2.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo chown :developer /home/ahmerijaz/bootcamp/day2.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo chown testuser:developer /home/ahmerijaz/bootcamp/test.txt
+chown: cannot access '/home/ahmerijaz/bootcamp/test.txt': No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo chown testuser:developer /home/ahmerijaz/bootcamp/day2.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo chown -R :developer /home/ahmerijaz/bootcamp
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo whoami
+root
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo
+usage: sudo -h | -K | -k | -V
+usage: sudo -v [-ABkNnS] [-g group] [-h host] [-p prompt] [-u user]
+usage: sudo -l [-ABkNnS] [-g group] [-h host] [-p prompt] [-U user]
+            [-u user] [command [arg ...]]
+usage: sudo [-ABbEHkNnPS] [-r role] [-t type] [-C num] [-D directory]
+            [-g group] [-h host] [-p prompt] [-R directory] [-T timeout]
+            [-u user] [VAR=value] [-i | -s] [command [arg ...]]
+usage: sudo -e [-ABkNnS] [-r role] [-t type] [-C num] [-D directory]
+            [-g group] [-h host] [-p prompt] [-R directory] [-T timeout]
+            [-u user] file ...
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo useradd -m -a /bin/bash appuser
+useradd: invalid option -- 'a'
+Usage: useradd [options] LOGIN
+       useradd -D
+       useradd -D [options]
+
+Options:
+      --badname                 do not check for bad names
+  -b, --base-dir BASE_DIR       base directory for the home directory of the
+                                new account
+      --btrfs-subvolume-home    use BTRFS subvolume for home directory
+  -c, --comment COMMENT         GECOS field of the new account
+  -d, --home-dir HOME_DIR       home directory of the new account
+  -D, --defaults                print or change default useradd configuration
+  -e, --expiredate EXPIRE_DATE  expiration date of the new account
+  -f, --inactive INACTIVE       password inactivity period of the new account
+  -F, --add-subids-for-system   add entries to sub[ud]id even when adding a system user
+  -g, --gid GROUP               name or ID of the primary group of the new
+                                account
+  -G, --groups GROUPS           list of supplementary groups of the new
+                                account
+  -h, --help                    display this help message and exit
+  -k, --skel SKEL_DIR           use this alternative skeleton directory
+  -K, --key KEY=VALUE           override /etc/login.defs defaults
+  -l, --no-log-init             do not add the user to the lastlog and
+                                faillog databases
+  -m, --create-home             create the user's home directory
+  -M, --no-create-home          do not create the user's home directory
+  -N, --no-user-group           do not create a group with the same name as
+                                the user
+  -o, --non-unique              allow to create users with duplicate
+                                (non-unique) UID
+  -p, --password PASSWORD       encrypted password of the new account
+  -r, --system                  create a system account
+  -R, --root CHROOT_DIR         directory to chroot into
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -s, --shell SHELL             login shell of the new account
+  -u, --uid UID                 user ID of the new account
+  -U, --user-group              create a group with the same name as the user
+  -Z, --selinux-user SEUSER     use a specific SEUSER for the SELinux user mapping
+      --extrausers              Use the extra users database
+
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ id appuser
+id: ‘appuser’: no such user
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo useradd -m -a /bin/bash appuser
+useradd: invalid option -- 'a'
+Usage: useradd [options] LOGIN
+       useradd -D
+       useradd -D [options]
+
+Options:
+      --badname                 do not check for bad names
+  -b, --base-dir BASE_DIR       base directory for the home directory of the
+                                new account
+      --btrfs-subvolume-home    use BTRFS subvolume for home directory
+  -c, --comment COMMENT         GECOS field of the new account
+  -d, --home-dir HOME_DIR       home directory of the new account
+  -D, --defaults                print or change default useradd configuration
+  -e, --expiredate EXPIRE_DATE  expiration date of the new account
+  -f, --inactive INACTIVE       password inactivity period of the new account
+  -F, --add-subids-for-system   add entries to sub[ud]id even when adding a system user
+  -g, --gid GROUP               name or ID of the primary group of the new
+                                account
+  -G, --groups GROUPS           list of supplementary groups of the new
+                                account
+  -h, --help                    display this help message and exit
+  -k, --skel SKEL_DIR           use this alternative skeleton directory
+  -K, --key KEY=VALUE           override /etc/login.defs defaults
+  -l, --no-log-init             do not add the user to the lastlog and
+                                faillog databases
+  -m, --create-home             create the user's home directory
+  -M, --no-create-home          do not create the user's home directory
+  -N, --no-user-group           do not create a group with the same name as
+                                the user
+  -o, --non-unique              allow to create users with duplicate
+                                (non-unique) UID
+  -p, --password PASSWORD       encrypted password of the new account
+  -r, --system                  create a system account
+  -R, --root CHROOT_DIR         directory to chroot into
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -s, --shell SHELL             login shell of the new account
+  -u, --uid UID                 user ID of the new account
+  -U, --user-group              create a group with the same name as the user
+  -Z, --selinux-user SEUSER     use a specific SEUSER for the SELinux user mapping
+      --extrausers              Use the extra users database
+
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo useradd -m -s /
+bin/bash appuser
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ id appuser
+uid=1002(appuser) gid=1003(appuser) groups=1003(appuser)
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo groupadd apps
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ cat /etc/group | grep apps
+apps:x:1004:
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo usermod -aG apps appuser
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ id appuser
+uid=1002(appuser) gid=1003(appuser) groups=1003(appuser),1004(apps)
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ cd ..
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber$ cd ..
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp$ cd ..
+ahmerijaz@DESKTOP-9HRD2U5:~$ cd ..
+ahmerijaz@DESKTOP-9HRD2U5:/home$ cd ..
+ahmerijaz@DESKTOP-9HRD2U5:/$ touch /home/ahmer/bootcamp/config.conf
+touch: cannot touch '/home/ahmer/bootcamp/config.conf': No such file ordirectory
+ahmerijaz@DESKTOP-9HRD2U5:/$ touch /home/ahmerijaz/bootcamp/config.conf
+ahmerijaz@DESKTOP-9HRD2U5:/$ ls -l /home/ahmerijaz/bootcamp/config.conf
+-rw-r--r-- 1 ahmerijaz ahmerijaz 0 Jun  5 16:21 /home/ahmerijaz/bootcamp/config.conf
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo chown appuser :apps /home/ahmerijaz/bootcamp/config.conf
+chown: cannot access ':apps': No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo chown appuser:apps /home/ahmerijaz/boo
+tcamp/config.conf
+ahmerijaz@DESKTOP-9HRD2U5:/$ ls -l /home/ahmerijaz/bootcamp/config.conf
+-rw-r--r-- 1 appuser apps 0 Jun  5 16:21 /home/ahmerijaz/bootcamp/config.conf
+ahmerijaz@DESKTOP-9HRD2U5:/$ id appuser
+uid=1002(appuser) gid=1003(appuser) groups=1003(appuser),1004(apps)
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo somecommand
+sudo: somecommand: command not found
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo su
+[sudo] password for ahmerijaz:
+root@DESKTOP-9HRD2U5:/# whoami
+root
+root@DESKTOP-9HRD2U5:/# exit
+exit
+ahmerijaz@DESKTOP-9HRD2U5:/$ whoami
+ahmerijaz
+ahmerijaz@DESKTOP-9HRD2U5:/$ car /etc/shadow
+Command 'car' not found, but can be installed with:
+sudo apt install ucommon-utils
+ahmerijaz@DESKTOP-9HRD2U5:/$ cat /etc/shadow
+cat: /etc/shadow: Permission denied
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo cat /etc/shadow
+root:*:20094:0:99999:7:::
+daemon:*:20094:0:99999:7:::
+bin:*:20094:0:99999:7:::
+sys:*:20094:0:99999:7:::
+sync:*:20094:0:99999:7:::
+games:*:20094:0:99999:7:::
+man:*:20094:0:99999:7:::
+lp:*:20094:0:99999:7:::
+mail:*:20094:0:99999:7:::
+news:*:20094:0:99999:7:::
+uucp:*:20094:0:99999:7:::
+proxy:*:20094:0:99999:7:::
+www-data:*:20094:0:99999:7:::
+backup:*:20094:0:99999:7:::
+list:*:20094:0:99999:7:::
+irc:*:20094:0:99999:7:::
+_apt:*:20094:0:99999:7:::
+nobody:*:20094:0:99999:7:::
+systemd-network:!*:20094::::::
+systemd-timesync:!*:20094::::::
+dhcpcd:!:20094::::::
+messagebus:!:20094::::::
+syslog:!:20094::::::
+systemd-resolve:!*:20094::::::
+uuidd:!:20094::::::
+landscape:!:20094::::::
+polkitd:!*:20094::::::
+ahmerijaz:$y$j9T$Dg3MpqNlm1OGAMQ8bxE2l1$QqPA4aCchYihLA.FogFKHsV3HOPAIpiHylnL3W6bAP4:20579:0:99999:7:::
+testuser:!:20609:0:99999:7:::
+appuser:!:20609:0:99999:7:::
+ahmerijaz@DESKTOP-9HRD2U5:/$ whoami
+ahmerijaz
+ahmerijaz@DESKTOP-9HRD2U5:/$ id
+uid=1000(ahmerijaz) gid=1000(ahmerijaz) groups=1000(ahmerijaz),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),100(users),107(netdev)
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo whoami
+root
+ahmerijaz@DESKTOP-9HRD2U5:/$ id
+uid=1000(ahmerijaz) gid=1000(ahmerijaz) groups=1000(ahmerijaz),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),100(users),107(netdev)
+ahmerijaz@DESKTOP-9HRD2U5:/$
+ahmerijaz@DESKTOP-9HRD2U5:/$
+ahmerijaz@DESKTOP-9HRD2U5:/$
+ahmerijaz@DESKTOP-9HRD2U5:/$
+ahmerijaz@DESKTOP-9HRD2U5:/$
+ahmerijaz@DESKTOP-9HRD2U5:/$
+ahmerijaz@DESKTOP-9HRD2U5:/$
+ahmerijaz@DESKTOP-9HRD2U5:/$
+ahmerijaz@DESKTOP-9HRD2U5:/$
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo useradd -m -s /bin/bash analyst
+[sudo] password for ahmerijaz:
+Sorry, try again.
+[sudo] password for ahmerijaz:
+Sorry, try again.
+[sudo] password for ahmerijaz:
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo useradd -m -s /bin/bash developer
+useradd: group developer exists - if you want to add this user to that group, use -g.
+ahmerijaz@DESKTOP-9HRD2U5:/$ id analyst
+uid=1003(analyst) gid=1005(analyst) groups=1005(analyst)
+ahmerijaz@DESKTOP-9HRD2U5:/$ id developer
+id: ‘developer’: no such user
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo useradd -m -s /bin/bash developers
+ahmerijaz@DESKTOP-9HRD2U5:/$ id developers
+uid=1004(developers) gid=1006(developers) groups=1006(developers)
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo groupadd security
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo groupadd tools
+ahmerijaz@DESKTOP-9HRD2U5:/$ cat /etc/group | grep -E "security|tools"
+security:x:1007:
+tools:x:1008:
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo usermod -aG secuirty analyst
+usermod: group 'secuirty' does not exist
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo usermod -aG security analyst
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo usermod -aG tools developers
+ahmerijaz@DESKTOP-9HRD2U5:/$ id analyst
+uid=1003(analyst) gid=1005(analyst) groups=1005(analyst),1007(security)
+ahmerijaz@DESKTOP-9HRD2U5:/$ id developers
+uid=1004(developers) gid=1006(developers) groups=1006(developers),1008(tools)
+ahmerijaz@DESKTOP-9HRD2U5:/$ cd /home/ahmerijaz/bootcamp/toolkit
+-bash: cd: /home/ahmerijaz/bootcamp/toolkit: No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:/$ cd /
+ahmerijaz@DESKTOP-9HRD2U5:/$ ls
+bin                lib                proc                sys
+bin.usr-is-merged  lib.usr-is-merged  root                tmp
+boot               lib64              run                 usr
+dev                lost+found         sbin                var
+etc                media              sbin.usr-is-merged
+home               mnt                snap
+init               opt                srv
+ahmerijaz@DESKTOP-9HRD2U5:/$ cd home
+ahmerijaz@DESKTOP-9HRD2U5:/home$ cd ahmerijaz
+ahmerijaz@DESKTOP-9HRD2U5:~$ pwd
+/home/ahmerijaz
+ahmerijaz@DESKTOP-9HRD2U5:~$ cd bootcamp
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp$ cd toolkit
+-bash: cd: toolkit: No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp$ ls
+archive      cyber     fake_log.txt  nmap.txt
+config.conf  day2.txt  mynotes.txt   projects
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp$ cd cyber
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber$ ls
+permissionsInlinux  toolkit
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber$ cd toolkit
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ touch security_report.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ touch development_log.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ touch public_notes.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ ls -ls *.txt
+0 -rw-r--r-- 1 ahmerijaz ahmerijaz 0 Jun  5 17:39 development_log.txt
+0 -rw-r--r-- 1 ahmerijaz ahmerijaz 0 Jun  5 17:40 public_notes.txt
+0 -rw-r--r-- 1 ahmerijaz ahmerijaz 0 Jun  5 17:39 security_report.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo chown analyst:security security_report.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo chown developerahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo chown developer:tools development_log.txt
+[sudo] password for ahmerijaz:
+chown: invalid user: ‘developer:tools’
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo chown developer
+s:tools development_log.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ ls
+development_log.txt  recon           security_report.txt
+exploitation         reporting
+public_notes.txt     run_toolkit.sh
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo chown ahmerijaz:ahmerijaz public_notes.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ ls -l *.txt
+-rw-r--r-- 1 developers tools     0 Jun  5 17:39 development_log.txt
+-rw-r--r-- 1 ahmerijaz  ahmerijaz 0 Jun  5 17:40 public_notes.txt
+-rw-r--r-- 1 analyst    security  0 Jun  5 17:39 security_report.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ chmod 600 security_report.txt
+chmod: changing permissions of 'security_report.txt': Operation not permitted
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo su
+root@DESKTOP-9HRD2U5:/home/ahmerijaz/bootcamp/cyber/toolkit# sudo chattr +i security_report.txt
+root@DESKTOP-9HRD2U5:/home/ahmerijaz/bootcamp/cyber/toolkit# exit
+exit
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ chmod 600 security_report.txt
+chmod: changing permissions of 'security_report.txt': Operation not permitted
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ chmod 600 security_report.txt
+chmod: changing permissions of 'security_report.txt': Operation not permitted
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ chmod 640 development_log.txt
+chmod: changing permissions of 'development_log.txt': Operation not permitted
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ cd ..
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber$ cd ..
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp$ cd ..
+ahmerijaz@DESKTOP-9HRD2U5:~$ cd ..
+ahmerijaz@DESKTOP-9HRD2U5:/home$ cd ..
+ahmerijaz@DESKTOP-9HRD2U5:/$ cd ..
+ahmerijaz@DESKTOP-9HRD2U5:/$ chmod 640 development_log.txt
+chmod: cannot access 'development_log.txt': No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo chmod 600 security_report.txt
+chmod: cannot access 'security_report.txt': No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo su
+root@DESKTOP-9HRD2U5:/# ahmerijaz@DESKTOP-9HRD2U5:/$ sudo useradd -m -s/bin/bash developer     exit
+
+root@DESKTOP-9HRD2U5:/#
+root@DESKTOP-9HRD2U5:/# sudo chattr -i security_report.txt
+chattr: No such file or directory while trying to stat security_report.txt
+root@DESKTOP-9HRD2U5:/# sudo chattr -i /home/ahmerijaz/bootcamp/cyber/toolkit/security_report.txt
+sudo chmod 600 security_report.txt  # Now should work
+chmod: cannot access 'security_report.txt': No such file or directory
+root@DESKTOP-9HRD2U5:/# # This command already worked when you used thefull path
+sudo chattr -i /home/ahmerijaz/bootcamp/cyber/toolkit/security_report.txt
+root@DESKTOP-9HRD2U5:/# exit
+exit
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo chmod 600 /home/ahmerijaz/bootcamp/cyber/toolkit/security_report.txt
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo chmod 600 /home/ahmerijaz/bootcamp/cyber/toolkit/development_log.txt
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo chmod 640 /home/ahmerijaz/bootcamp/cyb
+er/toolkit/development_log.txt
+ahmerijaz@DESKTOP-9HRD2U5:/$ sudo chmod 644 /home/ahmerijaz/bootcamp/cyb
+er/toolkit/public_notes.txt
+ahmerijaz@DESKTOP-9HRD2U5:/$ ls -l *.txt
+ls: cannot access '*.txt': No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:/$ ls -l *.txt
+ls: cannot access '*.txt': No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:/$ cd /
+ahmerijaz@DESKTOP-9HRD2U5:/$ pwd
+/
+ahmerijaz@DESKTOP-9HRD2U5:/$ cd /home
+ahmerijaz@DESKTOP-9HRD2U5:/home$ cd/home/ahmerijaz/bootcamp/cyber/toolkit
+-bash: cd/home/ahmerijaz/bootcamp/cyber/toolkit: No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:/home$ cd/home/ahmerijaz
+-bash: cd/home/ahmerijaz: No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:/home$ cd /ahmerijaz
+-bash: cd: /ahmerijaz: No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:/home$ cd /ahmerijaz/bootcamp/cyber/toolkit
+-bash: cd: /ahmerijaz/bootcamp/cyber/toolkit: No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:/home$ cd ahmerijaz
+ahmerijaz@DESKTOP-9HRD2U5:~$ cd cyber
+-bash: cd: cyber: No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:~$ pwd
+/home/ahmerijaz
+ahmerijaz@DESKTOP-9HRD2U5:~$ cd bootcamp
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp$ cd cyber
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber$ cd toolkit
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ ls -l *.txt
+-rw-r----- 1 developers tools     0 Jun  5 17:39 development_log.txt
+-rw-r--r-- 1 ahmerijaz  ahmerijaz 0 Jun  5 17:40 public_notes.txt
+-rw------- 1 analyst    security  0 Jun  5 17:39 security_report.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ echo "Security Assessment Report - Confidential" > security_report.txt
+echo "Development Build Log - Version 2.1" > development_log.txt
+echo "Public Project Notes - Available to all team members" > public_notes.txt
+-bash: security_report.txt: Permission denied
+-bash: development_log.txt: Permission denied
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ ls -laR
+.:
+total 28
+drwxr-xr-x 5 ahmerijaz  developer 4096 Jun  5 17:40 .
+drwxr-xr-x 4 ahmerijaz  developer 4096 Jun  5 15:32 ..
+-rw-r----- 1 developers tools        0 Jun  5 17:39 development_log.txt
+drwxr-xr-x 2 ahmerijaz  developer 4096 Jun  2 22:13 exploitation
+-rw-r--r-- 1 ahmerijaz  ahmerijaz   53 Jun  5 21:18 public_notes.txt
+drwxr-xr-x 2 ahmerijaz  developer 4096 Jun  2 22:12 recon
+drwxr-xr-x 2 ahmerijaz  developer 4096 Jun  2 22:14 reporting
+-rwxr-x--- 1 ahmerijaz  developer   26 Jun  5 15:57 run_toolkit.sh
+-rw------- 1 analyst    security     0 Jun  5 17:39 security_report.txt
+
+./exploitation:
+total 12
+drwxr-xr-x 2 ahmerijaz developer 4096 Jun  2 22:13 .
+drwxr-xr-x 5 ahmerijaz developer 4096 Jun  5 17:40 ..
+-r--r--r-- 1 ahmerijaz developer   25 Jun  2 22:19 notes.txt
+
+./recon:
+total 12
+drwxr-xr-x 2 ahmerijaz developer 4096 Jun  2 22:12 .
+drwxr-xr-x 5 ahmerijaz developer 4096 Jun  5 17:40 ..
+-rw-r----- 1 ahmerijaz developer   27 Jun  2 22:15 notes.txt
+
+./reporting:
+total 16
+drwxr-xr-x 2 ahmerijaz developer 4096 Jun  2 22:14 .
+drwxr-xr-x 5 ahmerijaz developer 4096 Jun  5 17:40 ..
+-rw-r----- 1 ahmerijaz developer   22 Jun  2 22:19 notes.txt
+-rw------- 1 ahmerijaz developer   15 Jun  2 22:20 template.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ sudo bash -c 'echo "Security Assessment Report - Confidential" > security_report.txt'
+sudo bash -c 'echo "Development Build Log - Version 2.1" > development_log.txt'
+echo "Public Project Notes - Available to all team members" > public_notes.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$

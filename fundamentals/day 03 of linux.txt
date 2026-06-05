@@ -1,0 +1,302 @@
+ahmerijaz@DESKTOP-9HRD2U5:~$ cd /
+ahmerijaz@DESKTOP-9HRD2U5:/$ cd ahmerijaz
+-bash: cd: ahmerijaz: No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:/$ cd home
+ahmerijaz@DESKTOP-9HRD2U5:/home$ cd ahmerijaz
+ahmerijaz@DESKTOP-9HRD2U5:~$ cd bootcamp
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp$ cd cyber
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber$ cd toolkit
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/cyber/toolkit$ cd /
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -name "security_report.txt"
+/home/ahmerijaz/bootcamp/cyber/toolkit/security_report.txt
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -name "*.txt"
+/home/ahmerijaz/bootcamp/archive/day2_backup.txt
+/home/ahmerijaz/bootcamp/nmap.txt
+/home/ahmerijaz/bootcamp/day2.txt
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/secret.txt
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/public.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/development_log.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/public_notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/security_report.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/recon/notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/exploitation/notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/reporting/template.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/reporting/notes.txt
+/home/ahmerijaz/bootcamp/mynotes.txt
+/home/ahmerijaz/bootcamp/fake_log.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/nmap.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/wireshark.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/metasploit.txt
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f
+/home/ahmerijaz/bootcamp/archive/day2_backup.txt
+/home/ahmerijaz/bootcamp/nmap.txt
+/home/ahmerijaz/bootcamp/day2.txt
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/secret.txt
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/backup.sh
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/public.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/development_log.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/public_notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/security_report.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/recon/notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/exploitation/notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/run_toolkit.sh
+/home/ahmerijaz/bootcamp/cyber/toolkit/reporting/template.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/reporting/notes.txt
+/home/ahmerijaz/bootcamp/mynotes.txt
+/home/ahmerijaz/bootcamp/fake_log.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/nmap.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/wireshark.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/metasploit.txt
+/home/ahmerijaz/bootcamp/config.conf
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type d
+/home/ahmerijaz/bootcamp
+/home/ahmerijaz/bootcamp/archive
+/home/ahmerijaz/bootcamp/cyber
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux
+/home/ahmerijaz/bootcamp/cyber/toolkit
+/home/ahmerijaz/bootcamp/cyber/toolkit/recon
+/home/ahmerijaz/bootcamp/cyber/toolkit/exploitation
+/home/ahmerijaz/bootcamp/cyber/toolkit/reporting
+/home/ahmerijaz/bootcamp/projects
+/home/ahmerijaz/bootcamp/projects/cybersecurity
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type l
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type s
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type p
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -size +100c
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -size -100c
+/home/ahmerijaz/bootcamp/archive/day2_backup.txt
+/home/ahmerijaz/bootcamp/nmap.txt
+/home/ahmerijaz/bootcamp/day2.txt
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/secret.txt
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/backup.sh
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/public.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/development_log.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/public_notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/security_report.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/recon/notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/exploitation/notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/run_toolkit.sh
+/home/ahmerijaz/bootcamp/cyber/toolkit/reporting/template.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/reporting/notes.txt
+/home/ahmerijaz/bootcamp/mynotes.txt
+/home/ahmerijaz/bootcamp/fake_log.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/nmap.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/wireshark.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/metasploit.txt
+/home/ahmerijaz/bootcamp/config.conf
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -size 100c
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -prem -002
+find: unknown predicate `-prem'
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -perm -002
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -user analyst
+/home/ahmerijaz/bootcamp/cyber/toolkit/security_report.txt
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -mmin -60
+/home/ahmerijaz/bootcamp/cyber/toolkit/development_log.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/public_notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/security_report.txt
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -name "*.txt" -user ahmerijaz
+/home/ahmerijaz/bootcamp/archive/day2_backup.txt
+/home/ahmerijaz/bootcamp/nmap.txt
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/secret.txt
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/public.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/public_notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/recon/notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/exploitation/notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/reporting/template.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/reporting/notes.txt
+/home/ahmerijaz/bootcamp/mynotes.txt
+/home/ahmerijaz/bootcamp/fake_log.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/nmap.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/wireshark.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/metasploit.txt
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -name "*.txt" -ls
+    46421      4 -rw-r--r--   1 ahmerijaz developer       65 Jun  2 17:52 /home/ahmerijaz/bootcamp/archive/day2_backup.txt
+    46443      4 -rw-r--r--   1 ahmerijaz developer       24 Jun  2 18:11 /home/ahmerijaz/bootcamp/nmap.txt
+    45619      4 -rw-r--r--   1 testuser  developer       65 Jun  2 17:56 /home/ahmerijaz/bootcamp/day2.txt
+    49439      4 -rw-------   1 ahmerijaz developer       16 Jun  5 15:33 /home/ahmerijaz/bootcamp/cyber/permissionsInlinux/secret.txt
+    51704      4 -r--r--r--   1 ahmerijaz developer       40 Jun  5 15:34 /home/ahmerijaz/bootcamp/cyber/permissionsInlinux/public.txt
+    51727      4 -rw-r-----   1 developers tools           36 Jun  5 21:21 /home/ahmerijaz/bootcamp/cyber/toolkit/development_log.txt
+    51737      4 -rw-r--r--   1 ahmerijaz  ahmerijaz       53 Jun  5 21:21 /home/ahmerijaz/bootcamp/cyber/toolkit/public_notes.txt
+    51714      4 -rw-------   1 analyst    security        42 Jun  5 21:21 /home/ahmerijaz/bootcamp/cyber/toolkit/security_report.txt
+    46440      4 -rw-r-----   1 ahmerijaz  developer       27 Jun  2 22:15 /home/ahmerijaz/bootcamp/cyber/toolkit/recon/notes.txt
+    46442      4 -r--r--r--   1 ahmerijaz  developer       25 Jun  2 22:19 /home/ahmerijaz/bootcamp/cyber/toolkit/exploitation/notes.txt
+    46452      4 -rw-------   1 ahmerijaz  developer       15 Jun  2 22:20 /home/ahmerijaz/bootcamp/cyber/toolkit/reporting/template.txt
+    46450      4 -rw-r-----   1 ahmerijaz  developer       22 Jun  2 22:19 /home/ahmerijaz/bootcamp/cyber/toolkit/reporting/notes.txt
+    45620      0 -rw-r--r--   1 ahmerijaz  developer        0 Jun  2 17:50 /home/ahmerijaz/bootcamp/mynotes.txt
+    45623      0 -rw-r--r--   1 ahmerijaz  developer        0 Jun  2 17:50 /home/ahmerijaz/bootcamp/fake_log.txt
+    46430      4 -rw-r--r--   1 ahmerijaz  developer       50 Jun  2 18:00 /home/ahmerijaz/bootcamp/projects/cybersecurity/tools/nmap.txt
+    46431      0 -rw-r--r--   1 ahmerijaz  developer        0 Jun  2 17:59 /home/ahmerijaz/bootcamp/projects/cybersecurity/tools/wireshark.txt
+    46437      0 -rw-r--r--   1 ahmerijaz  developer        0 Jun  2 17:59 /home/ahmerijaz/bootcamp/projects/cybersecurity/tools/metasploit.txt
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -name "*.txt" -exec cat {} \;
+this is my linux ubuntu terminal bootcamp
+Day 2 file management
+Used for port scanning
+this is my linux ubuntu terminal bootcamp
+Day 2 file management
+This is secret.
+This is a public file with some content
+cat: /home/ahmerijaz/bootcamp/cyber/toolkit/development_log.txt: Permission denied
+Public Project Notes - Available to all team members
+cat: /home/ahmerijaz/bootcamp/cyber/toolkit/security_report.txt: Permission denied
+Reconnaissance phase tools
+exploitation phase tools
+Report Title:
+reporting phase tools
+nmao is a network scanner
+used for port scanning
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -empty
+/home/ahmerijaz/bootcamp/mynotes.txt
+/home/ahmerijaz/bootcamp/fake_log.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/wireshark.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/metasploit.txt
+/home/ahmerijaz/bootcamp/config.conf
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -iname "*.TXT"
+/home/ahmerijaz/bootcamp/archive/day2_backup.txt
+/home/ahmerijaz/bootcamp/nmap.txt
+/home/ahmerijaz/bootcamp/day2.txt
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/secret.txt
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/public.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/development_log.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/public_notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/security_report.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/recon/notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/exploitation/notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/reporting/template.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/reporting/notes.txt
+/home/ahmerijaz/bootcamp/mynotes.txt
+/home/ahmerijaz/bootcamp/fake_log.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/nmap.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/wireshark.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/metasploit.txt
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -maxdepth 2 -type f
+/home/ahmerijaz/bootcamp/archive/day2_backup.txt
+/home/ahmerijaz/bootcamp/nmap.txt
+/home/ahmerijaz/bootcamp/day2.txt
+/home/ahmerijaz/bootcamp/mynotes.txt
+/home/ahmerijaz/bootcamp/fake_log.txt
+/home/ahmerijaz/bootcamp/config.conf
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -name "*.txt"
+/home/ahmerijaz/bootcamp/archive/day2_backup.txt
+/home/ahmerijaz/bootcamp/nmap.txt
+/home/ahmerijaz/bootcamp/day2.txt
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/secret.txt
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/public.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/development_log.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/public_notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/security_report.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/recon/notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/exploitation/notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/reporting/template.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/reporting/notes.txt
+/home/ahmerijaz/bootcamp/mynotes.txt
+/home/ahmerijaz/bootcamp/fake_log.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/nmap.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/wireshark.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/metasploit.txt
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -tpef
+find: unknown predicate `-tpe'
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type
+ f
+/home/ahmerijaz/bootcamp/archive/day2_backup.txt
+/home/ahmerijaz/bootcamp/nmap.txt
+/home/ahmerijaz/bootcamp/day2.txt
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/secret.txt
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/backup.sh
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/public.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/development_log.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/public_notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/security_report.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/recon/notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/exploitation/notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/run_toolkit.sh
+/home/ahmerijaz/bootcamp/cyber/toolkit/reporting/template.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/reporting/notes.txt
+/home/ahmerijaz/bootcamp/mynotes.txt
+/home/ahmerijaz/bootcamp/fake_log.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/nmap.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/wireshark.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/metasploit.txt
+/home/ahmerijaz/bootcamp/config.conf
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -user analyst
+/home/ahmerijaz/bootcamp/cyber/toolkit/security_report.txt
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -mmin -60
+/home/ahmerijaz/bootcamp/cyber/toolkit/development_log.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/public_notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/security_report.txt
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -emoty
+find: unknown predicate `-emoty'
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -empty
+/home/ahmerijaz/bootcamp/mynotes.txt
+/home/ahmerijaz/bootcamp/fake_log.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/wireshark.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/metasploit.txt
+/home/ahmerijaz/bootcamp/config.conf
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -perm -002
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -user developer
+find: ‘developer’ is not the name of a known user
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -user developers
+/home/ahmerijaz/bootcamp/cyber/toolkit/development_log.txt
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -perm -040
+/home/ahmerijaz/bootcamp/archive/day2_backup.txt
+/home/ahmerijaz/bootcamp/nmap.txt
+/home/ahmerijaz/bootcamp/day2.txt
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/backup.sh
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/public.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/development_log.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/public_notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/recon/notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/exploitation/notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/run_toolkit.sh
+/home/ahmerijaz/bootcamp/cyber/toolkit/reporting/notes.txt
+/home/ahmerijaz/bootcamp/mynotes.txt
+/home/ahmerijaz/bootcamp/fake_log.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/nmap.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/wireshark.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/metasploit.txt
+/home/ahmerijaz/bootcamp/config.conf
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -ls
+    46421      4 -rw-r--r--   1 ahmerijaz developer       65 Jun  2 17:52 /home/ahmerijaz/bootcamp/archive/day2_backup.txt
+    46443      4 -rw-r--r--   1 ahmerijaz developer       24 Jun  2 18:11 /home/ahmerijaz/bootcamp/nmap.txt
+    45619      4 -rw-r--r--   1 testuser  developer       65 Jun  2 17:56 /home/ahmerijaz/bootcamp/day2.txt
+    49439      4 -rw-------   1 ahmerijaz developer       16 Jun  5 15:33 /home/ahmerijaz/bootcamp/cyber/permissionsInlinux/secret.txt
+    46478      4 -rwxr-xr-x   1 ahmerijaz developer       29 Jun  5 15:44 /home/ahmerijaz/bootcamp/cyber/permissionsInlinux/backup.sh
+    51704      4 -r--r--r--   1 ahmerijaz developer       40 Jun  5 15:34 /home/ahmerijaz/bootcamp/cyber/permissionsInlinux/public.txt
+    51727      4 -rw-r-----   1 developers tools           36 Jun  5 21:21 /home/ahmerijaz/bootcamp/cyber/toolkit/development_log.txt
+    51737      4 -rw-r--r--   1 ahmerijaz  ahmerijaz       53 Jun  5 21:21 /home/ahmerijaz/bootcamp/cyber/toolkit/public_notes.txt
+    51714      4 -rw-------   1 analyst    security        42 Jun  5 21:21 /home/ahmerijaz/bootcamp/cyber/toolkit/security_report.txt
+    46440      4 -rw-r-----   1 ahmerijaz  developer       27 Jun  2 22:15 /home/ahmerijaz/bootcamp/cyber/toolkit/recon/notes.txt
+    46442      4 -r--r--r--   1 ahmerijaz  developer       25 Jun  2 22:19 /home/ahmerijaz/bootcamp/cyber/toolkit/exploitation/notes.txt
+    51708      4 -rwxr-x---   1 ahmerijaz  developer       26 Jun  5 15:57 /home/ahmerijaz/bootcamp/cyber/toolkit/run_toolkit.sh
+    46452      4 -rw-------   1 ahmerijaz  developer       15 Jun  2 22:20 /home/ahmerijaz/bootcamp/cyber/toolkit/reporting/template.txt
+    46450      4 -rw-r-----   1 ahmerijaz  developer       22 Jun  2 22:19 /home/ahmerijaz/bootcamp/cyber/toolkit/reporting/notes.txt
+    45620      0 -rw-r--r--   1 ahmerijaz  developer        0 Jun  2 17:50 /home/ahmerijaz/bootcamp/mynotes.txt
+    45623      0 -rw-r--r--   1 ahmerijaz  developer        0 Jun  2 17:50 /home/ahmerijaz/bootcamp/fake_log.txt
+    46430      4 -rw-r--r--   1 ahmerijaz  developer       50 Jun  2 18:00 /home/ahmerijaz/bootcamp/projects/cybersecurity/tools/nmap.txt
+    46431      0 -rw-r--r--   1 ahmerijaz  developer        0 Jun  2 17:59 /home/ahmerijaz/bootcamp/projects/cybersecurity/tools/wireshark.txt
+    46437      0 -rw-r--r--   1 ahmerijaz  developer        0 Jun  2 17:59 /home/ahmerijaz/bootcamp/projects/cybersecurity/tools/metasploit.txt
+    49322      0 -rw-r--r--   1 appuser    apps             0 Jun  5 16:21 /home/ahmerijaz/bootcamp/config.conf
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -name "security_report.txt" -exec ls -ll {} \;
+-rw------- 1 analyst security 42 Jun  5 21:21 /home/ahmerijaz/bootcamp/cyber/toolkit/security_report.txt
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -name "*.txt" -size -100c
+/home/ahmerijaz/bootcamp/archive/day2_backup.txt
+/home/ahmerijaz/bootcamp/nmap.txt
+/home/ahmerijaz/bootcamp/day2.txt
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/secret.txt
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/public.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/development_log.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/public_notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/security_report.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/recon/notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/exploitation/notes.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/reporting/template.txt
+/home/ahmerijaz/bootcamp/cyber/toolkit/reporting/notes.txt
+/home/ahmerijaz/bootcamp/mynotes.txt
+/home/ahmerijaz/bootcamp/fake_log.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/nmap.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/wireshark.txt
+/home/ahmerijaz/bootcamp/projects/cybersecurity/tools/metasploit.txt
+ahmerijaz@DESKTOP-9HRD2U5:/$ find /home/ahmerijaz/bootcamp -type f -executable
+/home/ahmerijaz/bootcamp/cyber/permissionsInlinux/backup.sh
+/home/ahmerijaz/bootcamp/cyber/toolkit/run_toolkit.sh
+ahmerijaz@DESKTOP-9HRD2U5:/$
