@@ -1,0 +1,224 @@
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ cat > sample.log <<'EOF'
+2024-06-05 10:30:45 INFO User admin logged in successfully
+2024-06-05 10:31:20 ERROR Failed login attempt for user analyst
+2024-06-05 10:32:10 WARNING Security scan initiated
+2024-06-05 10:33:15 ERROR Failed login attempt for user developer
+2024-06-05 10:34:45 INFO User analyst logged in successfully
+2024-06-05 10:35:30 CRITICAL Unauthorized access attempt detected
+2024-06-05 10:36:00 INFO Backup completed successfully
+2024-06-05 10:37:15 ERROR File permission denied for /etc/shadow
+2024-06-05 10:38:20 WARNING Low disk space detected
+2024-06-05 10:39:45 INFO Database synchronized
+EOF
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ cat > security_report.txt << 'EOF'
+SECURITY AUDIT REPORT
+=====================
+
+User Access Summary:
+- admin user accessed 5 times
+- analyst user accessed 8 times
+- developer user accessed 3 times
+
+Failed Login Attempts:
+analyst - 3 failed attempts
+developer - 2 failed attempts
+
+Critical Events:
+- Unauthorized access attempt at 10:35
+- Permission denied errors
+- Low disk space warnings
+
+Recommendations:
+- Investigate failed logins
+- Review access logs
+- Increase security monitoring
+EOF
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ cat > security_report.txt << 'EOF'
+SECURITY AUDIT REPORT
+=====================
+
+User Access Summary:
+- admin user accessed 5 times
+- analyst user accessed 8 times
+- developer user accessed 3 times
+
+Failed Login Attempts:
+analyst - 3 failed attempts
+developer - 2 failed attempts
+
+Critical Events:
+- Unauthorized access attempt at 10:35
+- Permission denied errors
+- Low disk space warnings
+
+Recommendations:
+- Investigate failed logins
+- Review access logs
+- Increase security monitoring
+EOF
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ cat > system.conf << 'EOF'
+# System Configuration File
+
+# Database Settings
+db_host = localhost
+db_user = admin
+db_password = secret123
+db_port = 3306
+
+# Mail Server
+mail_server = smtp.example.com
+mail_password = mailpass456
+
+# API Keys
+api_key = sk-1234567890abcdef
+api_secret = supersecretkey
+
+# System Settings
+debug_mode = false
+log_level = INFO
+max_connections = 100
+EOF
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep "ERROR" sample.log
+2024-06-05 10:31:20 ERROR Failed login attempt for user analyst
+2024-06-05 10:33:15 ERROR Failed login attempt for user developer
+2024-06-05 10:37:15 ERROR File permission denied for /etc/shadow
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep -i "error" sample.log
+2024-06-05 10:31:20 ERROR Failed login attempt for user analyst
+2024-06-05 10:33:15 ERROR Failed login attempt for user developer
+2024-06-05 10:37:15 ERROR File permission denied for /etc/shadow
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep -v "ERROR" sample.log
+2024-06-05 10:30:45 INFO User admin logged in successfully
+2024-06-05 10:32:10 WARNING Security scan initiated
+2024-06-05 10:34:45 INFO User analyst logged in successfully
+2024-06-05 10:35:30 CRITICAL Unauthorized access attempt detected
+2024-06-05 10:36:00 INFO Backup completed successfully
+2024-06-05 10:38:20 WARNING Low disk space detected
+2024-06-05 10:39:45 INFO Database synchronized
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep -w "user" sample.log
+2024-06-05 10:31:20 ERROR Failed login attempt for user analyst
+2024-06-05 10:33:15 ERROR Failed login attempt for user developer
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep "password" sample.log security_report.txt system.conf
+system.conf:db_password = secret123
+system.conf:mail_password = mailpass456
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep -r "admin" .
+./security_report.txt:- admin user accessed 5 times
+./system.conf:db_user = admin
+./sample.log:2024-06-05 10:30:45 INFO User admin logged in successfully
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep -l "password" *.txt *.conf *.log
+system.conf
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ cat > security_report.txt << 'EOF'
+SECURITY AUDIT REPORT
+=====================
+
+User Access Summary:
+- admin user accessed 5 times
+- analyst user accessed 8 times
+- developer user accessed 3 times
+
+Failed Login Attempts:
+analyst - 3 failed attempts
+developer - 2 failed attempts
+
+Critical Events:
+- Unauthorized access attempt at 10:35
+- Permission denied errors
+- Low disk space warnings
+
+Recommendations:
+- Investigate failed logins
+- Review access logs
+- Increase security monitoring
+EOF
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep -l "password" *.txt *.conf *.log
+system.conf
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" sample.log
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep "successfully$" sample.log
+2024-06-05 10:30:45 INFO User admin logged in successfully
+2024-06-05 10:34:45 INFO User analyst logged in successfully
+2024-06-05 10:36:00 INFO Backup completed successfully
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep "ERROR" sample.log
+2024-06-05 10:31:20 ERROR Failed login attempt for user analyst
+2024-06-05 10:33:15 ERROR Failed login attempt for user developer
+2024-06-05 10:37:15 ERROR File permission denied for /etc/shadow
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep -i "user" sample.lo
+g
+2024-06-05 10:30:45 INFO User admin logged in successfully
+2024-06-05 10:31:20 ERROR Failed login attempt for user analyst
+2024-06-05 10:33:15 ERROR Failed login attempt for user developer
+2024-06-05 10:34:45 INFO User analyst logged in successfully
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep -v "INFO" sample/log
+grep: sample/log: No such file or directory
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep -v "INFO" sample.lo
+g
+2024-06-05 10:31:20 ERROR Failed login attempt for user analyst
+2024-06-05 10:32:10 WARNING Security scan initiated
+2024-06-05 10:33:15 ERROR Failed login attempt for user developer
+2024-06-05 10:35:30 CRITICAL Unauthorized access attempt detected
+2024-06-05 10:37:15 ERROR File permission denied for /etc/shadow
+2024-06-05 10:38:20 WARNING Low disk space detected
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep "password" sample.log security_report.txt system.conf
+system.conf:db_password = secret123
+system.conf:mail_password = mailpass456
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep -n "ERROR" sample.log
+2:2024-06-05 10:31:20 ERROR Failed login attempt for user analyst
+4:2024-06-05 10:33:15 ERROR Failed login attempt for user developer
+8:2024-06-05 10:37:15 ERROR File permission denied for /etc/shadow
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep -c "INFO" sample.log
+grep -c "ERROR" sample.log
+grep -c "WARNING" sample.log
+grep -c "CRITICAL" sample.log
+4
+3
+2
+1
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep "10:3[5-9]" sample.log
+2024-06-05 10:35:30 CRITICAL Unauthorized access attempt detected
+2024-06-05 10:36:00 INFO Backup completed successfully
+2024-06-05 10:37:15 ERROR File permission denied for /etc/shadow
+2024-06-05 10:38:20 WARNING Low disk space detected
+2024-06-05 10:39:45 INFO Database synchronized
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep "Failed" sample.log
+2024-06-05 10:31:20 ERROR Failed login attempt for user analyst
+2024-06-05 10:33:15 ERROR Failed login attempt for user developer
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep "CRITICAL" sample.log
+2024-06-05 10:35:30 CRITICAL Unauthorized access attempt detected
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep -c "ERROR" sample.log
+3
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep "analyst" sample.log
+2024-06-05 10:31:20 ERROR Failed login attempt for user analyst
+2024-06-05 10:34:45 INFO User analyst logged in successfully
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep -B 2 -A 2 "CRITICAL" sample.log
+2024-06-05 10:33:15 ERROR Failed login attempt for user developer
+2024-06-05 10:34:45 INFO User analyst logged in successfully
+2024-06-05 10:35:30 CRITICAL Unauthorized access attempt detected
+2024-06-05 10:36:00 INFO Backup completed successfully
+2024-06-05 10:37:15 ERROR File permission denied for /etc/shadow
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ grep -E "ERROR|WARNING|CRITICAL" sample.log
+2024-06-05 10:31:20 ERROR Failed login attempt for user analyst
+2024-06-05 10:32:10 WARNING Security scan initiated
+2024-06-05 10:33:15 ERROR Failed login attempt for user developer
+2024-06-05 10:35:30 CRITICAL Unauthorized access attempt detected
+2024-06-05 10:37:15 ERROR File permission denied for /etc/shadow
+2024-06-05 10:38:20 WARNING Low disk space detected
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ echo "=== SECURITY LOG SUMMARY ===" > log_summary.txt
+echo "" >> log_summary.txt
+echo "Total ERROR lines:" >> log_summary.txt
+grep -c "ERROR" sample.log >> log_summary.txt
+echo "" >> log_summary.txt
+echo "Total WARNING lines:" >> log_summary.txt
+grep -c "WARNING" sample.log >> log_summary.txt
+echo "" >> log_summary.txt
+echo "All CRITICAL events:" >> log_summary.txt
+grep "CRITICAL" sample.log >> log_summary.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$ cat log_summary.txt
+=== SECURITY LOG SUMMARY ===
+
+Total ERROR lines:
+3
+
+Total WARNING lines:
+2
+
+All CRITICAL events:
+2024-06-05 10:35:30 CRITICAL Unauthorized access attempt detected
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day6_grep$
