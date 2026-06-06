@@ -1,0 +1,232 @@
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.2  22188 13380 ?        Ss  07:14   0:15 /sbin/init
+root           2  0.0  0.0   3172  2208 hvc0     Sl+  07:14   0:00 /init
+root           7  0.0  0.0   3228  2168 hvc0     Sl+  07:14   0:00 plan9 --control-socket 7 --log-level4 --se
+root          65  0.0  0.2  66752 16016 ?        S<s  07:14   0:15 /usr/lib/systemd/systemd-journald
+root         121  0.0  0.1  25592  6872 ?        Ss  07:14   0:27 /usr/lib/systemd/systemd-udevd
+systemd+     133  0.0  0.2  21460 12952 ?        Ss  07:14   0:01 /usr/lib/systemd/systemd-resolved
+systemd+     134  0.0  0.1  91028  7900 ?        Ssl  07:14   0:04 /usr/lib/systemd/systemd-timesyncd
+root         192  0.0  0.0   4236  2692 ?        Ss  07:14   0:00 /usr/sbin/cron -f -P
+message+     193  0.0  0.0   9632  5340 ?        Ss  07:14   0:05 @dbus-daemon --system --address=systemd: --
+root         203  0.0  0.1  18156  8664 ?        Ss  07:14   0:02 /usr/lib/systemd/systemd-logind
+syslog       223  0.0  0.0 222508  5560 ?        Ssl  07:14   0:02 /usr/sbin/rsyslogd -n -iNONE
+root         226  0.0  0.0   3116  1920 tty1     Ss+  07:14   0:00 /sbin/agetty -o -p -- \u --noclear -linux
+root         228  0.0  0.3 107008 22844 ?        Ssl  07:14   0:00 /usr/bin/python3 /usr/share/unattended-upgr
+root         332  0.0  0.0   6660  4640 pts/1    Ss  07:14   0:00 /bin/login -f
+ahmerij+     389  0.0  0.1  20320 11324 ?        Ss  07:14   0:00 /usr/lib/systemd/systemd --user
+ahmerij+     392  0.0  0.0  21160  3556 ?        S  07:14   0:00 (sd-pam)
+ahmerij+     416  0.0  0.0   6072  5292 pts/1    S+  07:14   0:00 -bash
+polkitd     3212  0.0  0.1 308164  7972 ?        Ssl  12:56   0:02 /usr/lib/polkit-1/polkitd --no-debug
+root        4616  0.0  0.0   3180  1120 ?        Ss  14:25   0:00 /init
+root        4618  0.0  0.0   3196  1260 ?        S  14:25   0:00 /init
+ahmerij+    4620  0.0  0.0   6720  5932 pts/0    Ss  14:25   0:00 -bash
+root        7269  0.2  0.2 1756620 13500 ?       Ssl  22:47   0:00 /usr/libexec/wsl-pro-service
+ahmerij+    7308  0.0  0.0   3124  1848 pts/0    S  22:51   0:00 sleep 100
+ahmerij+    7309  0.0  0.0   3124  1852 pts/0    S  22:51   0:00 sleep 200
+ahmerij+    7312  0.0  0.0   3124  1852 pts/0    S  22:51   0:00 sleep 100
+ahmerij+    7323  100  0.0   8332  4308 pts/0    R+  22:52   0:00 ps aux
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ free-h
+               total        used        free      shared  buff/cache   available
+Mem:           5.7Gi       478Mi       5.2Gi       3.6Mi       151Mi       5.2Gi
+Swap:          2.0Gi          0B       2.0Gi
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ ps aux --sort=-%cpu | head -5
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+ahmerij+    7329  100  0.0   8332  4304 pts/0    R+  22:53   0:00 ps aux --sort=-%cpu
+root        7269  0.1  0.2 1756620 13500 ?       Ssl  22:47   0:00 /usr/libexec/wsl-pro-service
+root         121  0.0  0.1  25592  6872 ?        Ss  07:14   0:27 /usr/lib/systemd/systemd-udevd
+root          65  0.0  0.2  66752 16016 ?        S<s  07:14   0:15 /usr/lib/systemd/systemd-journald
+[3]   Done                    sleep 100
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ ps aux --sort=-%mem | head -5
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         228  0.0  0.3 107008 22844 ?        Ssl  07:14   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root          65  0.0  0.2  66752 16016 ?        S<s  07:14   0:15 /usr/lib/systemd/systemd-journald
+root        7269  0.1  0.2 1756620 13500 ?       Ssl  22:47   0:00 /usr/libexec/wsl-pro-service
+root           1  0.0  0.2  22188 13380 ?        Ss  07:14   0:15 /sbin/init
+[5]+  Done                    sleep 100
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ sleep 300 &
+jobs
+[5] 7336
+[4]-  Running                 sleep 200 &
+[5]+  Running                 sleep 300 &
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ kill%4
+jobs
+[4]-  Running                 sleep 200 &
+[5]+  Running                 sleep 300 &
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+none            2.9G     0  2.9G   0% /usr/lib/modules/6.6.114.1-microsoft-standard-WSL2
+none            2.9G  4.0K  2.9G   1% /mnt/wsl
+drivers         237G  105G  132G  45% /usr/lib/wsl/drivers
+/dev/sdd       1007G  7.7G  949G   1% /
+none            2.9G  168K  2.9G   1% /mnt/wslg
+none            2.9G     0  2.9G   0% /usr/lib/wsl/lib
+rootfs          2.9G  2.8M  2.9G   1% /init
+none            2.9G  516K  2.9G   1% /run
+none            2.9G     0  2.9G   0% /run/lock
+none            2.9G     0  2.9G   0% /run/shm
+none            2.9G   80K  2.9G   1% /mnt/wslg/versions.txt
+none            2.9G   80K  2.9G   1% /mnt/wslg/doc
+C:\             237G  105G  132G  45% /mnt/c
+D:\             466G   14G  453G   3% /mnt/d
+tmpfs           585M   20K  585M   1% /run/user/1000
+[4]-  Terminated              sleep 200
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ cd ..
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp$ mkdir day8_processes
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp$ cd day8_processes
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ echo "==SYSTEM HEALTH CHECK++" > system_report.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ echo " DATA : $ (date)" >> system_report.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ echo " " >> system_report.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ echo "=== MEMORY STATUS ===" >> system_report.txt
+free -h >> system_report.txt
+echo "" >> system_report.txt
+
+echo "=== TOP 5 RAM-USING PROCESSES ===" >> system_report.txt
+ps aux --sort=-%mem | head -6 >> system_report.txt
+echo "" >> system_report.txt
+
+echo "=== TOP 5 CPU-USING PROCESSES ===" >> system_report.txt
+ps aux --sort=-%cpu | head -6 >> system_report.txt
+echo "" >> system_report.txt
+
+echo "=== DISK USAGE ===" >> system_report.txt
+df -h >> system_report.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ cat system_report.txt
+==SYSTEM HEALTH CHECK++
+ DATA : $ (date)
+
+=== MEMORY STATUS ===
+               total        used        free      shared  buff/cache   available
+Mem:           5.7Gi       478Mi       5.2Gi       3.6Mi       151Mi       5.2Gi
+Swap:          2.0Gi          0B       2.0Gi
+
+=== TOP 5 RAM-USING PROCESSES ===
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         228  0.0  0.3 107008 22844 ?        Ssl  07:15   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root          65  0.0  0.2  66752 16020 ?        S<s  07:14   0:15 /usr/lib/systemd/systemd-journald
+root        7269  0.0  0.2 1756620 13504 ?       Ssl  22:48   0:00 /usr/libexec/wsl-pro-service
+root           1  0.0  0.2  22188 13380 ?        Ss  07:14   0:15 /sbin/init
+systemd+     133  0.0  0.2  21460 12952 ?        Ss  07:14   0:01 /usr/lib/systemd/systemd-resolved
+
+=== TOP 5 CPU-USING PROCESSES ===
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root        7269  0.0  0.2 1756620 13504 ?       Ssl  22:48   0:00 /usr/libexec/wsl-pro-service
+root         121  0.0  0.1  25592  6872 ?        Ss  07:14   0:27 /usr/lib/systemd/systemd-udevd
+root          65  0.0  0.2  66752 16020 ?        S<s  07:14   0:15 /usr/lib/systemd/systemd-journald
+root           1  0.0  0.2  22188 13380 ?        Ss  07:14   0:15 /sbin/init
+message+     193  0.0  0.0   9632  5340 ?        Ss  07:15   0:06 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+
+=== DISK USAGE ===
+Filesystem      Size  Used Avail Use% Mounted on
+none            2.9G     0  2.9G   0% /usr/lib/modules/6.6.114.1-microsoft-standard-WSL2
+none            2.9G  4.0K  2.9G   1% /mnt/wsl
+drivers         237G  105G  132G  45% /usr/lib/wsl/drivers
+/dev/sdd       1007G  7.7G  949G   1% /
+none            2.9G  168K  2.9G   1% /mnt/wslg
+none            2.9G     0  2.9G   0% /usr/lib/wsl/lib
+rootfs          2.9G  2.8M  2.9G   1% /init
+none            2.9G  516K  2.9G   1% /run
+none            2.9G     0  2.9G   0% /run/lock
+none            2.9G     0  2.9G   0% /run/shm
+none            2.9G   80K  2.9G   1% /mnt/wslg/versions.txt
+none            2.9G   80K  2.9G   1% /mnt/wslg/doc
+C:\             237G  105G  132G  45% /mnt/c
+D:\             466G   14G  453G   3% /mnt/d
+tmpfs           585M   20K  585M   1% /run/user/1000
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ grep 's/$ (date)/$(date)/' system_report.txt
+[5]+  Done                    sleep 300  (wd: ~/bootcamp/day7_sed)
+(wd now: ~/bootcamp/day8_processes)
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ sed 's/$ (date)/$(date)/' system_report.txt
+==SYSTEM HEALTH CHECK++
+ DATA : $(date)
+
+=== MEMORY STATUS ===
+               total        used        free      shared  buff/cache   available
+Mem:           5.7Gi       478Mi       5.2Gi       3.6Mi       151Mi       5.2Gi
+Swap:          2.0Gi          0B       2.0Gi
+
+=== TOP 5 RAM-USING PROCESSES ===
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         228  0.0  0.3 107008 22844 ?        Ssl  07:15   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root          65  0.0  0.2  66752 16020 ?        S<s  07:14   0:15 /usr/lib/systemd/systemd-journald
+root        7269  0.0  0.2 1756620 13504 ?       Ssl  22:48   0:00 /usr/libexec/wsl-pro-service
+root           1  0.0  0.2  22188 13380 ?        Ss  07:14   0:15 /sbin/init
+systemd+     133  0.0  0.2  21460 12952 ?        Ss  07:14   0:01 /usr/lib/systemd/systemd-resolved
+
+=== TOP 5 CPU-USING PROCESSES ===
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root        7269  0.0  0.2 1756620 13504 ?       Ssl  22:48   0:00 /usr/libexec/wsl-pro-service
+root         121  0.0  0.1  25592  6872 ?        Ss  07:14   0:27 /usr/lib/systemd/systemd-udevd
+root          65  0.0  0.2  66752 16020 ?        S<s  07:14   0:15 /usr/lib/systemd/systemd-journald
+root           1  0.0  0.2  22188 13380 ?        Ss  07:14   0:15 /sbin/init
+message+     193  0.0  0.0   9632  5340 ?        Ss  07:15   0:06 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+
+=== DISK USAGE ===
+Filesystem      Size  Used Avail Use% Mounted on
+none            2.9G     0  2.9G   0% /usr/lib/modules/6.6.114.1-microsoft-standard-WSL2
+none            2.9G  4.0K  2.9G   1% /mnt/wsl
+drivers         237G  105G  132G  45% /usr/lib/wsl/drivers
+/dev/sdd       1007G  7.7G  949G   1% /
+none            2.9G  168K  2.9G   1% /mnt/wslg
+none            2.9G     0  2.9G   0% /usr/lib/wsl/lib
+rootfs          2.9G  2.8M  2.9G   1% /init
+none            2.9G  516K  2.9G   1% /run
+none            2.9G     0  2.9G   0% /run/lock
+none            2.9G     0  2.9G   0% /run/shm
+none            2.9G   80K  2.9G   1% /mnt/wslg/versions.txt
+none            2.9G   80K  2.9G   1% /mnt/wslg/doc
+C:\             237G  105G  132G  45% /mnt/c
+D:\             466G   14G  453G   3% /mnt/d
+tmpfs           585M   20K  585M   1% /run/user/1000
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ echo "=== PROCESS COUNTS ===" >> system_report.txt
+echo "Total processes: $(ps aux | wc -l)" >> system_report.txt
+echo "Bash processes: $(ps aux | grep bash | wc -l)" >> system_report.txt
+echo "Root processes: $(ps aux | grep '^root' | wc -l)" >> system_report.txt
+
+cat system_report.txt
+==SYSTEM HEALTH CHECK++
+ DATA : $ (date)
+
+=== MEMORY STATUS ===
+               total        used        free      shared  buff/cache   available
+Mem:           5.7Gi       478Mi       5.2Gi       3.6Mi       151Mi       5.2Gi
+Swap:          2.0Gi          0B       2.0Gi
+
+=== TOP 5 RAM-USING PROCESSES ===
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         228  0.0  0.3 107008 22844 ?        Ssl  07:15   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root          65  0.0  0.2  66752 16020 ?        S<s  07:14   0:15 /usr/lib/systemd/systemd-journald
+root        7269  0.0  0.2 1756620 13504 ?       Ssl  22:48   0:00 /usr/libexec/wsl-pro-service
+root           1  0.0  0.2  22188 13380 ?        Ss  07:14   0:15 /sbin/init
+systemd+     133  0.0  0.2  21460 12952 ?        Ss  07:14   0:01 /usr/lib/systemd/systemd-resolved
+
+=== TOP 5 CPU-USING PROCESSES ===
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root        7269  0.0  0.2 1756620 13504 ?       Ssl  22:48   0:00 /usr/libexec/wsl-pro-service
+root         121  0.0  0.1  25592  6872 ?        Ss  07:14   0:27 /usr/lib/systemd/systemd-udevd
+root          65  0.0  0.2  66752 16020 ?        S<s  07:14   0:15 /usr/lib/systemd/systemd-journald
+root           1  0.0  0.2  22188 13380 ?        Ss  07:14   0:15 /sbin/init
+message+     193  0.0  0.0   9632  5340 ?        Ss  07:15   0:06 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+
+=== DISK USAGE ===
+Filesystem      Size  Used Avail Use% Mounted on
+none            2.9G     0  2.9G   0% /usr/lib/modules/6.6.114.1-microsoft-standard-WSL2
+none            2.9G  4.0K  2.9G   1% /mnt/wsl
+drivers         237G  105G  132G  45% /usr/lib/wsl/drivers
+/dev/sdd       1007G  7.7G  949G   1% /
+none            2.9G  168K  2.9G   1% /mnt/wslg
+none            2.9G     0  2.9G   0% /usr/lib/wsl/lib
+rootfs          2.9G  2.8M  2.9G   1% /init
+none            2.9G  516K  2.9G   1% /run
+none            2.9G     0  2.9G   0% /run/lock
+none            2.9G     0  2.9G   0% /run/shm
+none            2.9G   80K  2.9G   1% /mnt/wslg/versions.txt
+none            2.9G   80K  2.9G   1% /mnt/wslg/doc
+C:\             237G  105G  132G  45% /mnt/c
+D:\             466G   14G  453G   3% /mnt/d
+tmpfs           585M   20K  585M   1% /run/user/1000
+=== PROCESS COUNTS ===
+Total processes: 25
+Bash processes: 4
+Root processes: 12
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$
