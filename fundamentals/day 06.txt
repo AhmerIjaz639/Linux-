@@ -1,0 +1,174 @@
+ahmerijaz@DESKTOP-9HRD2U5:~$ cd /home/ahmerijaz/bootcamp/day7_sed
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ cat > db.conf <<'EOF'
+> database_host = oldserver.example.com
+database_port = 3306
+database_user = dbadmin
+database_password = OldSecurePass123
+database_name = production_db
+connection_timeout = 30
+max_retries = 5
+> EOF
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ cat > api.conf << 'EOF'
+# API Configun
+api_base_url = https://api.oldomain.com
+api_key = sk_live_old1234567890abcdef
+api_secret = secret_old_xyz9876543210
+debug_mode = true
+log_level = DEBUG
+timeout = 60
+EOF
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ cat > app.conf << 'EOF'
+# Application Settings
+app_name = MyApplication
+app_version = 1.0.0
+app_environment = production
+app_debug = true
+app_log_level = debug
+app_timezone = UTC
+database_host = oldserver.example.com
+api_endpoint = https://api.oldomain.com
+admin_email = admin@oldomain.com
+EOF
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ cp db.conf db.conf.backup
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ cp api.conf api.conf.backup
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ co app.conf app.conf.backup
+Command 'co' not found, but can be installed with:
+sudo apt install rcs
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ cp app.conf app.c
+onf.backup
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ sed -2 's/oldersever.example.com/newserver.example.com/g' db.conf api.conf app.conf
+sed: invalid option -- '2'
+Usage: sed [OPTION]... {script-only-if-no-other-script} [input-file]...
+
+  -n, --quiet, --silent
+                 suppress automatic printing of pattern space
+      --debug
+                 annotate program execution
+  -e script, --expression=script
+                 add the script to the commands to be executed
+  -f script-file, --file=script-file
+                 add the contents of script-file to the commands to be executed
+  --follow-symlinks
+                 follow symlinks when processing in place
+  -i[SUFFIX], --in-place[=SUFFIX]
+                 edit files in place (makes backup if SUFFIX supplied)
+  -l N, --line-length=N
+                 specify the desired line-wrap length for the `l' command
+  --posix
+                 disable all GNU extensions.
+  -E, -r, --regexp-extended
+                 use extended regular expressions in the script
+                 (for portability use POSIX -E).
+  -s, --separate
+                 consider files as separate rather than as a single,
+                 continuous long stream.
+      --sandbox
+                 operate in sandbox mode (disable e/r/w commands).
+  -u, --unbuffered
+                 load minimal amounts of data from the input files and flush
+                 the output buffers more often
+  -z, --null-data
+                 separate lines by NUL characters
+      --help     display this help and exit
+      --version  output version information and exit
+
+If no -e, --expression, -f, or --file option is given, then thefirst
+non-option argument is taken as the sed script to interpret.  All
+remaining arguments are names of input files; if no input filesare
+specified, then the standard input is read.
+
+GNU sed home page: <https://www.gnu.org/software/sed/>.
+General help using GNU software: <https://www.gnu.org/gethelp/>.
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ sed -i 's/olderse
+ver.example.com/newserver.example.com/g' db.conf api.conf app.co
+nf
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ grep "server" db.conf
+database_host = oldserver.example.com
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ sed -i 's/oldserver.example.com/newserver.example.com/g' db.conf api.conf app.conf
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ grep "server" db.conf
+database_host = newserver.example.com
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ sed -i 's/oldomain.com/newdomain.com/g' db.conf api.conf app.conf
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ grep "domain\|newdomain" api.conf app.conf
+api.conf:api_base_url = https://api.newdomain.com
+app.conf:api_endpoint = https://api.newdomain.com
+app.conf:admin_email = admin@newdomain.com
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ sed -i 's/debug_mode = true/debug_mode = false/' api.conf
+sed -i 's/app_debug = true/app_debug = false/' app.conf
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ grep "debug" api.conf app.conf
+api.conf:debug_mode = false
+app.conf:app_debug = false
+app.conf:app_log_level = debug
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ sed -i 's/sk_live_old1234567890abcdef/sk_live_new9876543210abcdef/g' api.conf
+sed -i 's/secret_old_xyz9876543210/secret_new_abc1234567890xyz/g' api.conf
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ grep "api_" api.conf | grep -v "endpoint"
+api_base_url = https://api.newdomain.com
+api_key = sk_live_new9876543210abcdef
+api_secret = secret_new_abc1234567890xyz
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ sed -i 's/OldSecurePass123/NewSecurePass789/g' db.conf
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ grep "password" db.conf
+database_password = NewSecurePass789
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ sed -i 's/admin@oldomain.com/admin@newdomain.com/g' app.conf
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ grep "admin_email" app.conf
+admin_email = admin@newdomain.com
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ sed -i 's/log_level = DEBUG/log_level = ERROR/i' api.conf
+sed -i 's/app_log_level = debug/app_log_level = error/i' app.conf
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ grep -i "log_level\|log" api.conf app.conf
+api.conf:log_level = ERROR
+app.conf:app_log_level = error
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ echo "=== CONFIGURATION UPDATE SUMMARY ===" > update_summary.txt
+echo "" >> update_summary.txt
+echo "Files updated:" >> update_summary.txt
+echo "- db.conf" >> update_summary.txt
+echo "- api.conf" >> update_summary.txt
+echo "- app.conf" >> update_summary.txt
+echo "" >> update_summary.txt
+echo "=== db.conf ===" >> update_summary.txt
+cat db.conf >> update_summary.txt
+echo "" >> update_summary.txt
+echo "=== api.conf ===" >> update_summary.txt
+cat api.conf >> update_summary.txt
+echo "" >> update_summary.txt
+echo "=== app.conf ===" >> update_summary.txt
+cat app.conf >> update_summary.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ cat update_summary.txt
+=== CONFIGURATION UPDATE SUMMARY ===
+
+Files updated:
+- db.conf
+- api.conf
+- app.conf
+
+=== db.conf ===
+database_host = newserver.example.com
+database_port = 3306
+database_user = dbadmin
+database_password = NewSecurePass789
+database_name = production_db
+connection_timeout = 30
+max_retries = 5
+
+=== api.conf ===
+# API Configun
+api_base_url = https://api.newdomain.com
+api_key = sk_live_new9876543210abcdef
+api_secret = secret_new_abc1234567890xyz
+debug_mode = false
+log_level = ERROR
+timeout = 60
+
+=== app.conf ===
+# Application Settings
+app_name = MyApplication
+app_version = 1.0.0
+app_environment = production
+app_debug = false
+app_log_level = error
+app_timezone = UTC
+database_host = newserver.example.com
+api_endpoint = https://api.newdomain.com
+admin_email = admin@newdomain.com
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$ grep -i "password\|secret\|key" db.conf api.conf app.conf
+db.conf:database_password = NewSecurePass789
+api.conf:api_key = sk_live_new9876543210abcdef
+api.conf:api_secret = secret_new_abc1234567890xyz
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day7_sed$
