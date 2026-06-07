@@ -1,0 +1,212 @@
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ hostname
+DESKTOP-9HRD2U5
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ hostname -I
+172.19.102.2
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ ping -c 4 google.com
+PING google.com (142.250.202.206) 56(84) bytes of data.
+64 bytes from lcmcta-aj-in-f14.1e100.net (142.250.202.206): icmp_seq=1 ttl=114 time=44.8 ms
+64 bytes from lcmcta-aj-in-f14.1e100.net (142.250.202.206): icmp_seq=2 ttl=114 time=45.9 ms
+64 bytes from lcmcta-aj-in-f14.1e100.net (142.250.202.206): icmp_seq=3 ttl=114 time=38.6 ms
+64 bytes from lcmcta-aj-in-f14.1e100.net (142.250.202.206): icmp_seq=4 ttl=114 time=37.9 ms
+
+--- google.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss,time 3051ms
+rtt min/avg/max/mdev = 37.904/41.793/45.946/3.594 ms
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ ip addr show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:16:ae:fb brd ff:ff:ff:ff:ff:ff
+    inet 172.19.102.2/20 brd 172.19.111.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe16:aefb/64 scope link
+       valid_lft forever preferred_lft forever
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ ss -tuln
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:PortProcess
+udp   UNCONN 0      0          127.0.0.54:53 0.0.0.0:*
+udp   UNCONN 0      0       127.0.0.53%lo:53 0.0.0.0:*
+udp   UNCONN 0      0      10.255.255.254:53 0.0.0.0:*
+udp   UNCONN 0      0           127.0.0.1:323 0.0.0.0:*
+udp   UNCONN 0      0               [::1]:323    [::]:*
+tcp   LISTEN 0      4096       127.0.0.54:53 0.0.0.0:*
+tcp   LISTEN 0      1000   10.255.255.254:53 0.0.0.0:*
+tcp   LISTEN 0      4096    127.0.0.53%lo:53 0.0.0.0:*
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ nsloopup google.com
+Command 'nsloopup' not found, did you mean:
+  command 'nslookup' from deb bind9-dnsutils (1:9.18.39-0ubuntu0.24.04.5)
+Try: sudo apt install <deb name>
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ nslookup go
+ogle.com
+Command 'nslookup' not found, but can be installedwith:
+sudo apt install bind9-dnsutils
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ nslookup google.com
+Command 'nslookup' not found, but can be installedwith:
+sudo apt install bind9-dnsutils
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ sudo apt install bind9-dnsutils
+[sudo] password for ahmerijaz:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libdrm-nouveau2 libdrm-radeon1 libgl1-amber-dri
+  libglapi-mesa libxcb-dri2-0
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  bind9-host bind9-libs liblmdb0
+The following NEW packages will be installed:
+  bind9-dnsutils bind9-host bind9-libs liblmdb0
+0 upgraded, 4 newly installed, 0 to remove and 6 not upgraded.
+Need to get 1513 kB of archives.
+After this operation, 4319 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 liblmdb0 amd64 0.9.31-1build1 [48.1 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 bind9-libs amd64 1:9.18.39-0ubuntu0.24.04.5 [1258 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 bind9-host amd64 1:9.18.39-0ubuntu0.24.04.5 [50.5 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 bind9-dnsutils amd64 1:9.18.39-0ubuntu0.24.04.5 [156 kB]
+Fetched 1513 kB in 3s (514 kB/s)
+Selecting previously unselected package liblmdb0:amd64.
+(Reading database ... 66884 files and directories currently installed.)
+Preparing to unpack .../liblmdb0_0.9.31-1build1_amd64.deb ...
+Unpacking liblmdb0:amd64 (0.9.31-1build1) ...
+Selecting previously unselected package bind9-libs:amd64.
+Preparing to unpack .../bind9-libs_1%3a9.18.39-0ubuntu0.24.04.5_amd64.deb ...
+Unpacking bind9-libs:amd64 (1:9.18.39-0ubuntu0.24.04.5) ...
+Selecting previously unselected package bind9-host.
+Preparing to unpack .../bind9-host_1%3a9.18.39-0ubuntu0.24.04.5_amd64.deb ...
+Unpacking bind9-host (1:9.18.39-0ubuntu0.24.04.5) ...
+Selecting previously unselected package bind9-dnsutils.
+Preparing to unpack .../bind9-dnsutils_1%3a9.18.39-0ubuntu0.24.04.5_amd64.deb ...
+Unpacking bind9-dnsutils (1:9.18.39-0ubuntu0.24.04.5) ...
+Setting up liblmdb0:amd64 (0.9.31-1build1) ...
+Setting up bind9-libs:amd64 (1:9.18.39-0ubuntu0.24.04.5) ...
+Setting up bind9-host (1:9.18.39-0ubuntu0.24.04.5)...
+Setting up bind9-dnsutils (1:9.18.39-0ubuntu0.24.04.5) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.7)...
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ nslookup google.com
+Server:         10.255.255.254
+Address:        10.255.255.254#53
+
+Non-authoritative answer:
+Name:   google.com
+Address: 142.250.202.206
+Name:   google.com
+Address: 2a00:1450:4018:80f::200e
+
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ traceroute -m 10 googel.com
+Command 'traceroute' not found, but can be installed with:
+sudo apt install traceroute            # version 1:2.1.5-1, or
+sudo apt install inetutils-traceroute  # version 2:2.5-3ubuntu4.1
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ sudo apt install inetutils-traceroute
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libdrm-nouveau2 libdrm-radeon1 libgl1-amber-dri
+  libglapi-mesa libxcb-dri2-0
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  inetutils-traceroute
+0 upgraded, 1 newly installed, 0 to remove and 6 not upgraded.
+Need to get 42.3 kB of archives.
+After this operation, 113 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 inetutils-traceroute amd64 2:2.5-3ubuntu4.1 [42.3 kB]
+Fetched 42.3 kB in 1s (39.6 kB/s)
+Selecting previously unselected package inetutils-traceroute.
+(Reading database ... 66921 files and directories currently installed.)
+Preparing to unpack .../inetutils-traceroute_2%3a2.5-3ubuntu4.1_amd64.deb ...
+Unpacking inetutils-traceroute (2:2.5-3ubuntu4.1) ...
+Setting up inetutils-traceroute (2:2.5-3ubuntu4.1)...
+update-alternatives: using /usr/bin/inetutils-traceroute to provide /usr/bin/traceroute (traceroute) in auto mode
+Processing triggers for man-db (2.12.0-4build2) ...
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ traceroute -m 10 googel.com
+traceroute to googel.com (142.250.202.228), 10 hops max
+  1   172.19.96.1  0.744ms  0.397ms  0.442ms
+  2   192.168.237.190  3.794ms  2.118ms  7.332ms
+  3   192.168.100.1  18.542ms  25.335ms  14.037ms
+  4   157.20.147.2  6.717ms  7.536ms  22.328ms
+  5   103.151.47.121  13.898ms  9.292ms  15.300ms
+  6   110.93.205.184  11.046ms  7.365ms  0.010ms
+  7   110.93.254.38  41.850ms  2.418ms  44.069ms
+  8   110.93.252.136  31.599ms  40.924ms  31.009ms
+  9   110.93.192.111  40.666ms  40.746ms  44.460ms
+ 10   *  *  *
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ traceroute -m 30  googel.com
+traceroute to googel.com (142.250.202.228), 30 hops max
+  1   172.19.96.1  0.513ms  0.449ms  0.369ms
+  2   192.168.237.190  2.610ms  2.600ms  2.134ms
+  3   192.168.100.1  11.243ms  4.406ms  5.768ms
+  4   157.20.147.2  6.109ms  9.628ms  8.632ms
+  5   103.151.47.121  6.982ms  5.322ms  6.173ms
+  6   110.93.205.184  6.634ms  6.185ms  5.074ms
+  7   110.93.254.66  26.039ms  30.352ms  28.632ms
+  8   110.93.252.246  26.777ms  27.678ms  34.678ms
+  9   72.14.209.108  38.629ms  37.198ms  38.427ms
+ 10   *  *  *
+ 11   142.251.64.132  43.692ms  35.052ms  55.260ms
+ 12   192.178.96.3  78.894ms  184.094ms  52.048ms
+ 13   142.250.202.228  42.009ms  44.042ms  76.282ms
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ ss -t
+State Recv-Q Send-Q  Local Address:Port   Peer Address:Port Process
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ wget https://exmaple.com/file.txt
+--2026-06-06 23:48:10--  https://exmaple.com/file.txt
+Resolving exmaple.com (exmaple.com)... 104.18.74.230, 104.18.75.230, 2606:4700::6812:4ae6, ...
+Connecting to exmaple.com (exmaple.com)|104.18.74.230|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 123 [text/html]
+Saving to: ‘file.txt’
+
+file.txt         100%[==========>]     123  --.-KB/s    in 0s
+
+2026-06-06 23:48:10 (9.14 MB/s) - ‘file.txt’ saved[123/123]
+
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ ls
+file.txt  system_report.txt
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ cat file.txt
+
+<h1>Well hello there.</h1>
+<p>
+Welcome to exmaple.com.
+<br>Chances are you got here by mistake (example.com, anyone?)</p>
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ hostname -I && -c 1 8.8.8.8 && nslookup google.com
+172.19.102.2
+-c: command not found
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ hostname -I &&
+ping  -c 1 8.8.8.8 && nslookup google.com
+172.19.102.2
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=114 time=54.5 ms
+
+--- 8.8.8.8 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss,time 0ms
+rtt min/avg/max/mdev = 54.521/54.521/54.521/0.000 ms
+Server:         10.255.255.254
+Address:        10.255.255.254#53
+
+Non-authoritative answer:
+Name:   google.com
+Address: 142.250.202.206
+Name:   google.com
+Address: 2a00:1450:4018:80f::200e
+
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$ curl -I https://google.com
+HTTP/2 301
+location: https://www.google.com/
+content-type: text/html; charset=UTF-8
+content-security-policy-report-only: object-src 'none';base-uri 'self';script-src 'nonce-rdn5PZwME6JvdD-b63jzGw' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp
+date: Sat, 06 Jun 2026 18:51:05 GMT
+expires: Mon, 06 Jul 2026 18:51:05 GMT
+cache-control: public, max-age=2592000
+server: gws
+content-length: 220
+x-xss-protection: 0
+x-frame-options: SAMEORIGIN
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+ahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processesahmerijaz@DESKTOP-9HRD2U5:~/bootcamp/day8_processes$
