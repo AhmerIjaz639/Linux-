@@ -1,0 +1,383 @@
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ahmer@DESKTOP-VMOL2O5:~$ pwd
+/home/ahmer
+ahmer@DESKTOP-VMOL2O5:~$ whoami
+ahmer
+ahmer@DESKTOP-VMOL2O5:~$ ls
+bootcamp
+ahmer@DESKTOP-VMOL2O5:~$ ls -la
+total 32
+drwxr-x--- 4 ahmer ahmer 4096 Jun 22 06:20 .
+drwxr-xr-x 3 root  root  4096 Jun 22 04:43 ..
+-rw------- 1 ahmer ahmer 3835 Jun 22 06:20 .bash_history
+-rw-r--r-- 1 ahmer ahmer  220 Jun 22 04:43 .bash_logout
+-rw-r--r-- 1 ahmer ahmer 3771 Jun 22 04:43 .bashrc
+drwx------ 2 ahmer ahmer 4096 Jun 22 04:43 .cache
+-rw-rw-r-- 1 ahmer ahmer    0 Jun 22 04:43 .motd_shown
+-rw-r--r-- 1 ahmer ahmer  807 Jun 22 04:43 .profile
+drwxr-xr-x 3 ahmer ahmer 4096 Jun 22 04:54 bootcamp
+ahmer@DESKTOP-VMOL2O5:~$ ls -laR
+.:
+total 32
+drwxr-x--- 4 ahmer ahmer 4096 Jun 22 06:20 .
+drwxr-xr-x 3 root  root  4096 Jun 22 04:43 ..
+-rw------- 1 ahmer ahmer 3835 Jun 22 06:20 .bash_history
+-rw-r--r-- 1 ahmer ahmer  220 Jun 22 04:43 .bash_logout
+-rw-r--r-- 1 ahmer ahmer 3771 Jun 22 04:43 .bashrc
+drwx------ 2 ahmer ahmer 4096 Jun 22 04:43 .cache
+-rw-rw-r-- 1 ahmer ahmer    0 Jun 22 04:43 .motd_shown
+-rw-r--r-- 1 ahmer ahmer  807 Jun 22 04:43 .profile
+drwxr-xr-x 3 ahmer ahmer 4096 Jun 22 04:54 bootcamp
+
+./.cache:
+total 8
+drwx------ 2 ahmer ahmer 4096 Jun 22 04:43 .
+drwxr-x--- 4 ahmer ahmer 4096 Jun 22 06:20 ..
+-rw-r--r-- 1 ahmer ahmer    0 Jun 22 04:43 motd.legal-displayed
+
+./bootcamp:
+total 12
+drwxr-xr-x 3 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-x--- 4 ahmer ahmer 4096 Jun 22 06:20 ..
+drwxr-xr-x 6 ahmer ahmer 4096 Jun 22 05:15 company_files
+
+./bootcamp/company_files:
+total 32
+drwxr-xr-x 6 ahmer ahmer 4096 Jun 22 05:15 .
+drwxr-xr-x 3 ahmer ahmer 4096 Jun 22 04:54 ..
+-rw-r--r-- 1 ahmer ahmer 4862 Jun 22 05:15 STRUCTURE_REPORT.txt
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 finance
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 hr
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 it
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 marketing
+
+./bootcamp/company_files/finance:
+total 20
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 6 ahmer ahmer 4096 Jun 22 05:15 ..
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:02 archives
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 backup
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:00 documents
+
+./bootcamp/company_files/finance/archives:
+total 12
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:02 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+-rw------- 1 ahmer ahmer   22 Jun 22 05:02 2023_records.txt
+
+./bootcamp/company_files/finance/backup:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+./bootcamp/company_files/finance/documents:
+total 20
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:00 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+-rw------- 1 ahmer ahmer   22 Jun 22 05:00 budget.txt
+-rw------- 1 ahmer ahmer   17 Jun 22 05:00 expenses.txt
+-rw------- 1 ahmer ahmer   19 Jun 22 05:00 taxes.txt
+
+./bootcamp/company_files/hr:
+total 20
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 6 ahmer ahmer 4096 Jun 22 05:15 ..
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 archives
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:00 backup
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 04:59 documents
+
+./bootcamp/company_files/hr/archives:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+./bootcamp/company_files/hr/backup:
+total 12
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:00 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+-rw-r----- 1 ahmer ahmer   23 Jun 22 05:00 payroll.txt
+
+./bootcamp/company_files/hr/documents:
+total 20
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 04:59 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+-rw-r----- 1 ahmer ahmer   21 Jun 22 04:59 benefits.txt
+-rw-r----- 1 ahmer ahmer   28 Jun 22 04:57 employees.txt
+-rw-r----- 1 ahmer ahmer   21 Jun 22 04:58 reviews.txt
+
+./bootcamp/company_files/it:
+total 20
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 6 ahmer ahmer 4096 Jun 22 05:15 ..
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 archives
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:00 backup
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:00 documents
+
+./bootcamp/company_files/it/archives:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+./bootcamp/company_files/it/backup:
+total 12
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:00 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+-rw------- 1 ahmer ahmer   23 Jun 22 05:00 system_backup.txt
+
+./bootcamp/company_files/it/documents:
+total 20
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:00 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+-rw-r----- 1 ahmer ahmer   16 Jun 22 05:00 network.txt
+-rw------- 1 ahmer ahmer   25 Jun 22 05:00 security.txt
+-rw-r----- 1 ahmer ahmer   22 Jun 22 05:00 servers.txt
+
+./bootcamp/company_files/marketing:
+total 20
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 6 ahmer ahmer 4096 Jun 22 05:15 ..
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 05:13 archives
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 backup
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 documents
+
+./bootcamp/company_files/marketing/archives:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 05:13 .
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 ..
+-rw-r--r-- 1 ahmer ahmer    0 Jun 22 05:13 market_plan.txt
+
+./bootcamp/company_files/marketing/backup:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+./bootcamp/company_files/marketing/documents:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 ..
+ahmer@DESKTOP-VMOL2O5:~$ owd
+Command 'owd' not found, did you mean:
+  command 'od' from deb coreutils (9.4-2ubuntu2)
+  command 'xwd' from deb x11-apps (7.7+11)
+  command 'pwd' from deb coreutils (9.4-2ubuntu2)
+Try: sudo apt install <deb name>
+ahmer@DESKTOP-VMOL2O5:~$ pwd
+/home/ahmer
+ahmer@DESKTOP-VMOL2O5:~$ cd ahmer
+-bash: cd: ahmer: No such file or directory
+ahmer@DESKTOP-VMOL2O5:~$ cd home
+-bash: cd: home: No such file or directory
+ahmer@DESKTOP-VMOL2O5:~$ cd /
+ahmer@DESKTOP-VMOL2O5:/$ ls
+bin                lib                proc                sys
+bin.usr-is-merged  lib.usr-is-merged  root                tmp
+boot               lib64              run                 usr
+dev                lost+found         sbin                var
+etc                media              sbin.usr-is-merged
+home               mnt                snap
+init               opt                srv
+ahmer@DESKTOP-VMOL2O5:/$ cd home
+ahmer@DESKTOP-VMOL2O5:/home$ ls
+ahmer
+ahmer@DESKTOP-VMOL2O5:/home$ cd ahmer
+ahmer@DESKTOP-VMOL2O5:~$ ls
+bootcamp
+ahmer@DESKTOP-VMOL2O5:~$ mkdir log_analysis
+ahmer@DESKTOP-VMOL2O5:~$ ls
+bootcamp  log_analysis
+ahmer@DESKTOP-VMOL2O5:~$ mv log_analysis bootcamp/
+ahmer@DESKTOP-VMOL2O5:~$ ls
+bootcamp
+ahmer@DESKTOP-VMOL2O5:~$ cd bootcamp
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ ls
+company_files  log_analysis
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ cat > access.log << 'EOF'
+192.168.1.10 GET /index.html 200 1024 2024-06-05 08:00:00
+192.168.1.15 GET /admin.php 404 256 2024-06-05 08:01:00
+192.168.1.10 POST /login.php 200 512 2024-06-05 08:02:00
+192.168.1.20 GET /products 200 2048 2024-06-05 08:03:00
+192.168.1.15 GET /admin.php 404 256 2024-06-05 08:04:00
+192.168.1.10 DELETE /cache 200 64 2024-06-05 08:05:00
+192.168.1.20 GET /dashboard 200 1536 2024-06-05 08:06:00
+192.168.1.15 POST /data 500 256 2024-06-05 08:07:00
+192.168.1.10 GET /settings 200 768 2024-06-05 08:08:00
+192.168.1.25 GET /api/users 403 128 2024-06-05 08:09:00
+192.168.1.25 GET /api/users 403 128 2024-06-05 08:10:00
+192.168.1.25 GET /api/users 403 128 2024-06-05 08:11:00
+192.168.1.30 GET /index.html 200 1024 2024-06-05 08:12:00
+192.168.1.15 POST /upload 400 512 2024-06-05 08:13:00
+192.168.1.10 GET /download 200 5120 2024-06-05 08:14:00
+192.168.1.40 UNKNOWN /shell.php 500 256 2024-06-05 08:15:00
+192.168.1.20 GET /api/data 200 2048 2024-06-05 08:16:00
+192.168.1.15 GET /admin.php 404 256 2024-06-05 08:17:00
+192.168.1.40 UNKNOWN /shell.php 500 256 2024-06-05 08:18:00
+192.168.1.10 POST /comment 201 256 2024-06-05 08:19:00
+EOF
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ ls
+access.log  company_files  log_analysis
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ mv access.log log_analysis
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ ls
+company_files  log_analysis
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ cd log_analysis
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/log_analysis$ ls
+access.log
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/log_analysis$ echo "=== ERROR ANALYSIS ===" > security_report.txt
+echo "" >> security_report.txt
+echo "All HTTP errors found:" >> security_report.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/log_analysis$ grep -E "404|403|500|400" access.log >> security_report.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/log_analysis$ ls
+access.log  security_report.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/log_analysis$ cat security_report.txt
+=== ERROR ANALYSIS ===
+
+All HTTP errors found:
+192.168.1.15 GET /admin.php 404 256 2024-06-05 08:01:00
+192.168.1.15 GET /admin.php 404 256 2024-06-05 08:04:00
+192.168.1.15 POST /data 500 256 2024-06-05 08:07:00
+192.168.1.25 GET /api/users 403 128 2024-06-05 08:09:00
+192.168.1.25 GET /api/users 403 128 2024-06-05 08:10:00
+192.168.1.25 GET /api/users 403 128 2024-06-05 08:11:00
+192.168.1.15 POST /upload 400 512 2024-06-05 08:13:00
+192.168.1.40 UNKNOWN /shell.php 500 256 2024-06-05 08:15:00
+192.168.1.15 GET /admin.php 404 256 2024-06-05 08:17:00
+192.168.1.40 UNKNOWN /shell.php 500 256 2024-06-05 08:18:00
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/log_analysis$ echo "" >> security_report.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/log_analysis$ echo "Error count by type:" >> security_report.txt
+echo "404 errors: $(grep ' 404 ' access.log | wc -l)" >> security_report.txt
+echo "403 errors: $(grep ' 403 ' access.log | wc -l)" >> security_report.txt
+echo "500 errors: $(grep ' 500 ' access.log | wc -l)" >> security_report.txt
+echo "400 errors: $(grep ' 400 ' access.log | wc -l)" >> security_report.txt
+echo "" >> security_report.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/log_analysis$ echo "Suspiciousactivity (UNKNOWN method, shell.php, repeated 403):" >> security_report.txt
+grep "UNKNOWN\|shell.php" access.log >> security_report.txt
+echo "" >> security_report.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/log_analysis$ echo "Repeated 404 on /admin.php (possible brute force):" >> security_report.txt
+grep "/admin.php 404" access.log >> security_report.txt
+echo "" >> security_report.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/log_analysis$ echo "=== CLEANING LOG FILE ===" >> security_report.txt
+echo "" >> security_report.txt
+
+# Remove suspicious entries
+sed '/UNKNOWN/d; /shell.php/d' access.log > access.log.cleaned
+
+echo "Original entries: $(wc -l < access.log)" >> security_report.txt
+echo "Cleaned entries: $(wc -l < access.log.cleaned)" >> security_report.txt
+echo "" >> security_report.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/log_analysis$ # Create anonymized version
+sed 's/192.168.1.10/IP_A/g; s/192.168.1.15/IP_B/g; s/192.168.1.20/IP_C/g; s/192.168.1.25/IP_D/g; s/192.168.1.30/IP_E/g; s/192.168.1.40/IP_F/g' access.log > access.log.anonymized
+
+echo "=== ANONYMIZED LOG (sample) ===" >> security_report.txt
+head -5 access.log.anonymized >> security_report.txt
+echo "" >> security_report.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/log_analysis$ echo "=== IP ADDRESS ANALYSIS ===" >> security_report.txt
+echo "Unique IPs accessing the system:" >> security_report.txt
+grep -oE "192\.168\.1\.[0-9]+" access.log | sort | uniq >> security_report.txt
+echo "" >> security_report.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/log_analysis$ echo "Request count by IP:" >> security_report.txt
+grep -oE "192\.168\.1\.[0-9]+" access.log | sort | uniq -c | sort -rn >> security_report.txt
+echo "" >> security_report.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/log_analysis$ echo "Most accessed endpoints:" >> security_report.txt
+grep -oE "GET|POST|DELETE|UNKNOWN" access.log | sort | uniq -c >> security_report.txt
+echo "" >> security_report.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/log_analysis$ echo "=== SECURITY RECOMMENDATIONS ===" >> security_report.txt
+echo "" >> security_report.txt
+echo "1. IP 192.168.1.25 made 3 failed 403 requests to /api/users - Consider blocking" >> security_report.txt
+echo "2. IP 192.168.1.40 attempted to access shell.php twice - Potential attack" >> security_report.txt
+echo "3. IP 192.168.1.15 made 4 failed 404 requests to /admin.php - Possible brute force" >> security_report.txt
+echo "4. Total suspicious requests identified: $(grep -E "404|403|500|400|UNKNOWN|shell" access.log | wc -l)" >> security_report.txt
+echo "" >> security_report.txt
+echo "Report generated on: $(date)" >> security_report.txt
+
+# View the report
+cat security_report.txt
+=== ERROR ANALYSIS ===
+
+All HTTP errors found:
+192.168.1.15 GET /admin.php 404 256 2024-06-05 08:01:00
+192.168.1.15 GET /admin.php 404 256 2024-06-05 08:04:00
+192.168.1.15 POST /data 500 256 2024-06-05 08:07:00
+192.168.1.25 GET /api/users 403 128 2024-06-05 08:09:00
+192.168.1.25 GET /api/users 403 128 2024-06-05 08:10:00
+192.168.1.25 GET /api/users 403 128 2024-06-05 08:11:00
+192.168.1.15 POST /upload 400 512 2024-06-05 08:13:00
+192.168.1.40 UNKNOWN /shell.php 500 256 2024-06-05 08:15:00
+192.168.1.15 GET /admin.php 404 256 2024-06-05 08:17:00
+192.168.1.40 UNKNOWN /shell.php 500 256 2024-06-05 08:18:00
+
+Error count by type:
+404 errors: 3
+403 errors: 3
+500 errors: 3
+400 errors: 1
+
+Suspicious activity (UNKNOWN method, shell.php, repeated 403):
+192.168.1.40 UNKNOWN /shell.php 500 256 2024-06-05 08:15:00
+192.168.1.40 UNKNOWN /shell.php 500 256 2024-06-05 08:18:00
+
+Repeated 404 on /admin.php (possible brute force):
+192.168.1.15 GET /admin.php 404 256 2024-06-05 08:01:00
+192.168.1.15 GET /admin.php 404 256 2024-06-05 08:04:00
+192.168.1.15 GET /admin.php 404 256 2024-06-05 08:17:00
+
+=== CLEANING LOG FILE ===
+
+Original entries: 20
+Cleaned entries: 18
+
+=== ANONYMIZED LOG (sample) ===
+IP_A GET /index.html 200 1024 2024-06-05 08:00:00
+IP_B GET /admin.php 404 256 2024-06-05 08:01:00
+IP_A POST /login.php 200 512 2024-06-05 08:02:00
+IP_C GET /products 200 2048 2024-06-05 08:03:00
+IP_B GET /admin.php 404 256 2024-06-05 08:04:00
+
+=== IP ADDRESS ANALYSIS ===
+Unique IPs accessing the system:
+192.168.1.10
+192.168.1.15
+192.168.1.20
+192.168.1.25
+192.168.1.30
+192.168.1.40
+
+Request count by IP:
+      6 192.168.1.10
+      5 192.168.1.15
+      3 192.168.1.25
+      3 192.168.1.20
+      2 192.168.1.40
+      1 192.168.1.30
+
+Most accessed endpoints:
+      1 DELETE
+     13 GET
+      4 POST
+      2 UNKNOWN
+
+=== SECURITY RECOMMENDATIONS ===
+
+1. IP 192.168.1.25 made 3 failed 403 requests to /api/users - Consider blocking
+2. IP 192.168.1.40 attempted to access shell.php twice - Potential attack
+3. IP 192.168.1.15 made 4 failed 404 requests to /admin.php - Possible brute force
+4. Total suspicious requests identified: 10
+
+Report generated on: Mon Jun 22 06:40:11 PDT 2026
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/log_analysis$ # Create a file with only successful requests (200, 201 status)
+echo "=== SUCCESSFUL REQUESTS ===" > successful_requests.txt
+grep -E " 20[01] " access.log >> successful_requests.txt
+
+# Create a file with all errors
+echo "=== ERROR REQUESTS ===" > error_requests.txt
+grep -E " [45][0-9][0-9] " access.log >> error_requests.txt
+
+# Summary
+echo "" >> security_report.txt
+echo "=== FILES GENERATED ===" >> security_report.txt
+echo "access.log - Original log" >> security_report.txt
+echo "access.log.cleaned - Suspicious entries removed" >> security_report.txt
+echo "access.log.anonymized - IP addresses anonymized" >> security_report.txt
+echo "successful_requests.txt - Requests with 200/201 status" >> security_report.txt
+echo "error_requests.txt - Requests with 400/500 status" >> security_report.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/log_analysis$
