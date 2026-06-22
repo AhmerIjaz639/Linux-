@@ -1,0 +1,486 @@
+Installing, this may take a few minutes...
+Please create a default UNIX user account. The username does not need to match your Windows username.
+For more information visit: https://aka.ms/wslusers
+Enter new UNIX username: ahmer
+New password:
+Retype new password:
+passwd: password updated successfully
+Installation successful!
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ahmer@DESKTOP-VMOL2O5:~$ version
+version: command not found
+ahmer@DESKTOP-VMOL2O5:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 24.04.1 LTS
+Release:        24.04
+Codename:       noble
+ahmer@DESKTOP-VMOL2O5:~$ pwd
+/home/ahmer
+ahmer@DESKTOP-VMOL2O5:~$ whoami
+ahmer
+ahmer@DESKTOP-VMOL2O5:~$ u name -a
+u: command not found
+ahmer@DESKTOP-VMOL2O5:~$ uname -a
+Linux DESKTOP-VMOL2O5 6.18.33.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Fri Jun  5 01:12:21 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+ahmer@DESKTOP-VMOL2O5:~$ cd /
+ahmer@DESKTOP-VMOL2O5:/$ pwd
+/
+ahmer@DESKTOP-VMOL2O5:/$ ls
+bin                etc   lib.usr-is-merged  mnt   run                 srv  var
+bin.usr-is-merged  home  lib64              opt   sbin                sys
+boot               init  lost+found         proc  sbin.usr-is-merged  tmp
+dev                lib   media              root  snap                usr
+ahmer@DESKTOP-VMOL2O5:/$ cd home
+ahmer@DESKTOP-VMOL2O5:/home$ ls
+ahmer
+ahmer@DESKTOP-VMOL2O5:/home$ cd ahmer
+ahmer@DESKTOP-VMOL2O5:~$ pwd
+/home/ahmer
+ahmer@DESKTOP-VMOL2O5:~$ ls
+ahmer@DESKTOP-VMOL2O5:~$ mkdir bootcamp
+ahmer@DESKTOP-VMOL2O5:~$ pwd
+/home/ahmer
+ahmer@DESKTOP-VMOL2O5:~$ ls
+bootcamp
+ahmer@DESKTOP-VMOL2O5:~$ cd bootcamp
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ makdir  company_file
+Command 'makdir' not found, did you mean:
+  command 'mkdir' from deb coreutils (9.4-2ubuntu2)
+Try: sudo apt install <deb name>
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ mkdir -p company_files/{hr,ir,finance,marketing}/{documents,archives,backup}
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ ls
+company_files
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ cd company_files
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files$ ls
+finance  hr  ir  marketing
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files$ mv ir it
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files$ ls
+finance  hr  it  marketing
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files$ ls -laR company_files/
+ls: cannot access 'company_files/': No such file or directory
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files$ cd ..
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ ls -laR company_files/
+company_files/:
+total 24
+drwxr-xr-x 6 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 3 ahmer ahmer 4096 Jun 22 04:54 ..
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 finance
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 hr
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 it
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 marketing
+
+company_files/finance:
+total 20
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 6 ahmer ahmer 4096 Jun 22 04:54 ..
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 archives
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 backup
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 documents
+
+company_files/finance/archives:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+company_files/finance/backup:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+company_files/finance/documents:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+company_files/hr:
+total 20
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 6 ahmer ahmer 4096 Jun 22 04:54 ..
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 archives
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 backup
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 documents
+
+company_files/hr/archives:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+company_files/hr/backup:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+company_files/hr/documents:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+company_files/it:
+total 20
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 6 ahmer ahmer 4096 Jun 22 04:54 ..
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 archives
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 backup
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 documents
+
+company_files/it/archives:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+company_files/it/backup:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+company_files/it/documents:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+company_files/marketing:
+total 20
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 6 ahmer ahmer 4096 Jun 22 04:54 ..
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 archives
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 backup
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 documents
+
+company_files/marketing/archives:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+company_files/marketing/backup:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+company_files/marketing/documents:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 ..
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ echo "Employee roster for Q2 2024" > company_files/hr/documents/employees.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ echo "Performance reviews " > company_files/hr/documents/reviews.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ ls
+company_files
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ echo "Benefits information" > comapny_files/hr/documents/benefits.txt
+-bash: comapny_files/hr/documents/benefits.txt: No such file or directory
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ echo "Benefits information" > company_files/hr/documents/benefits.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ echo "Payroll data for june " > company_files/hr/backup/payroll.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ echo "Server inventory list" > company_files/it/documents/servers.txt
+"Netwoahmer@DESKTOP-VMOL2O5:~/bootcamp$ echo "Network diagram" > company_files/it/documents/network.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ echo "Password policy document" > company_files/it/documents/security.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ echo "Backup from last month" > company_files/it/backup/system_backup.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ echo "Q2 2024 budget report" > company_files/finance/documents/budget.txt
+cho "Monthly expenses" > company_files/finance/documents/expenses.txt
+echo "Tax documentsahmer@DESKTOP-VMOL2O5:~/bootcamp$ echo "Monthly expenses" > company_files/finance/documents/expenses.txt
+> compaahmer@DESKTOP-VMOL2O5:~/bootcamp$ echo "Tax documents 2024" > company_files/finance/documents/taxes.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ echo "Previous year archive" > company_files/finance/archive/2023_records.txt
+-bash: company_files/finance/archive/2023_records.txt: No such file or directory
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ ls
+company_files
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ cd company_files
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files$ ls
+finance  hr  it  marketing
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files$ cd finance
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files/finance$ ls
+archives  backup  documents
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files/finance$ echo "Previous year archive" > company_files/finance/archives/2023_records.txt
+-bash: company_files/finance/archives/2023_records.txt: No such file or directory
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files/finance$ cd ..
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files$ cd ..
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ echo "Previous year archive" > company_files/finance/archives/2023_records.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 750 company_files/hr/
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 750 company_files/hr/documents/
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 640 company_files/hr/documents/*.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 750 company_files/hr/backup/
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 640 company_files/hr/backup/*.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 750 company_files/it/
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 750 company_files/it/documents
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 600 company_files/it/documents/security.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 640 company_files/it/documents/{servers,networks}.txt
+chmod: cannot access 'company_files/it/documents/networks.txt': No such file or directory
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 640 company_files/it/documents/{servers,network}.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 750 company_files/it/backup/
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 600 company_files/it/backup/*.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 750 company_files/finance/
+750 company_filahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 750 company_files/finance/documents/
+mod 600 company_files/finance/dahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 600 company_files/finance/documents/budget.txt
+d 600 company_files/finance/documents/expenses.txt
+chmod 600 company_files/finahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 600 company_files/finance/documents/expenses.txt
+uments/tahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 600 company_files/finance/documents/taxes.txt
+50 company_files/finance/archive/
+chmodahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 750 company_files/finance/archive/
+ 600 comchmod: cannot access 'company_files/finance/archive/': No such file or directory
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 600 company_files/finance/archive/*.txt
+chmod: cannot access 'company_files/finance/archive/*.txt': No such file or directory
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 750 company_files/finance/archives/
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 600 company_files/finance/archives/*.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 755 company_files/marketing/
+d 755 company_files/marahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 755 company_files/marketing/documents/
+644 company_filahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 644 company_files/marketing/documents/*.txt
+mod 755 company_files/marketing/archivechmod: cannot access 'company_files/marketing/documents/*.txt': No such file or directory
+/
+chmod ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 755 company_files/marketing/archive/
+chmod: cannot access 'company_files/marketing/archive/': No such file or directory
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 644 company_files/marketing/archives/*.txt
+chmod: cannot access 'company_files/marketing/archives/*.txt': No such file or directory
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 755 company_files/marketing/archives/
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 644 company_files/marketing/archives/*.txt
+chmod: cannot access 'company_files/marketing/archives/*.txt': No such file or directory
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 755 company_files/marketing/archives/
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ ls
+company_files
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ cd company_files
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files$ ls
+finance  hr  it  marketing
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files$ cd marketing
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files/marketing$ ls
+archives  backup  documents
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files/marketing$ cd archives
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files/marketing/archives$ ls
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files/marketing/archives$ touch market_plan.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files/marketing/archives$ cd ..
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files/marketing$ cd ..
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files$ cd ..
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ chmod 644 company_files/marketing/archives/*.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ cat > company_files/STRUCTURE_REPORT.txt << 'EOF'
+> === COMPANY FILE STRUCTURE REPORT ===
+> Date: $(date)
+>
+> === DIRECTORY LAYOUT ===
+> EOF
+o "" >> company_files/STRUCTURE_REPORT.txt
+tree company_files/ >> company_files/STRUCTURahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ echo "" >> company_files/STRUCTURE_REPORT.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ tree company_files/ >> company_files/STRUCTURE_REPORT.txt 2>/dev/null || ls -laR company_files/ >> company_files/STRUCTURE_REPORT.txt
+> company_files/STRUCTURE_REPORT.txt << 'EOF'
+
+=== FILE PERMISSIONS SUMMARY ===
+HR Department:
+EOF
+
+ls -la company_files/hr/documents/ >> company_files/STRUCTURE_REPORT.txt
+
+cat >> company_files/STRUCTURE_REPORT.txt << 'EOF'
+
+IT Department:
+EOF
+
+ls -la company_files/it/documents/ >> company_files/STRUCTURE_REPORT.txt
+
+cat >> company_files/STRUCTURE_REPORT.txt << 'EOF'
+
+Finance Department:
+EOF
+
+ls -la company_files/finance/documents/ >> company_files/STRUCTURE_REPORT.txt
+
+cat >> company_files/STRUCTURE_REPORT.txt << 'EOF'
+
+Marketing Department:
+EOF
+
+ls -la company_files/marketing/documents/ >> company_files/STRUCTURE_REPORT.txtahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ cat >> company_files/STRUCTURE_REPORT.txt << 'EOF'
+>
+> === FILE PERMISSIONS SUMMARY ===
+> HR Department:
+> EOF
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ ls -la company_files/hr/documents/ >> company_files/STRUCTURE_REPORT.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ cat >> company_files/STRUCTURE_REPORT.txt << 'EOF'
+>
+> IT Department:
+> EOF
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ ls -la company_files/it/documents/ >> company_files/STRUCTURE_REPORT.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ cat >> company_files/STRUCTURE_REPORT.txt << 'EOF'
+>
+> Finance Department:
+> EOF
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ ls -la company_files/finance/documents/ >> company_files/STRUCTURE_REPORT.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ cat >> company_files/STRUCTURE_REPORT.txt << 'EOF'
+>
+> Marketing Department:
+> EOF
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ ls -la company_files/marketing/documents/ >> company_files/STRUCTURE_REPORT.txt
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$
+ahmer@DESKTOP-VMOL2O5:~/bootcamp$ cd company_files
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files$ ls
+STRUCTURE_REPORT.txt  finance  hr  it  marketing
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files$ cat STRUCTURE_REPORT.txt
+=== COMPANY FILE STRUCTURE REPORT ===
+Date: $(date)
+
+=== DIRECTORY LAYOUT ===
+
+company_files/:
+total 28
+drwxr-xr-x 6 ahmer ahmer 4096 Jun 22 05:15 .
+drwxr-xr-x 3 ahmer ahmer 4096 Jun 22 04:54 ..
+-rw-r--r-- 1 ahmer ahmer   79 Jun 22 05:15 STRUCTURE_REPORT.txt
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 finance
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 hr
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 it
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 marketing
+
+company_files/finance:
+total 20
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 6 ahmer ahmer 4096 Jun 22 05:15 ..
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:02 archives
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 backup
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:00 documents
+
+company_files/finance/archives:
+total 12
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:02 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+-rw------- 1 ahmer ahmer   22 Jun 22 05:02 2023_records.txt
+
+company_files/finance/backup:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+company_files/finance/documents:
+total 20
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:00 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+-rw------- 1 ahmer ahmer   22 Jun 22 05:00 budget.txt
+-rw------- 1 ahmer ahmer   17 Jun 22 05:00 expenses.txt
+-rw------- 1 ahmer ahmer   19 Jun 22 05:00 taxes.txt
+
+company_files/hr:
+total 20
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 6 ahmer ahmer 4096 Jun 22 05:15 ..
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 archives
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:00 backup
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 04:59 documents
+
+company_files/hr/archives:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+company_files/hr/backup:
+total 12
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:00 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+-rw-r----- 1 ahmer ahmer   23 Jun 22 05:00 payroll.txt
+
+company_files/hr/documents:
+total 20
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 04:59 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+-rw-r----- 1 ahmer ahmer   21 Jun 22 04:59 benefits.txt
+-rw-r----- 1 ahmer ahmer   28 Jun 22 04:57 employees.txt
+-rw-r----- 1 ahmer ahmer   21 Jun 22 04:58 reviews.txt
+
+company_files/it:
+total 20
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 6 ahmer ahmer 4096 Jun 22 05:15 ..
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 archives
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:00 backup
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:00 documents
+
+company_files/it/archives:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+company_files/it/backup:
+total 12
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:00 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+-rw------- 1 ahmer ahmer   23 Jun 22 05:00 system_backup.txt
+
+company_files/it/documents:
+total 20
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:00 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+-rw-r----- 1 ahmer ahmer   16 Jun 22 05:00 network.txt
+-rw------- 1 ahmer ahmer   25 Jun 22 05:00 security.txt
+-rw-r----- 1 ahmer ahmer   22 Jun 22 05:00 servers.txt
+
+company_files/marketing:
+total 20
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 6 ahmer ahmer 4096 Jun 22 05:15 ..
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 05:13 archives
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 backup
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 documents
+
+company_files/marketing/archives:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 05:13 .
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 ..
+-rw-r--r-- 1 ahmer ahmer    0 Jun 22 05:13 market_plan.txt
+
+company_files/marketing/backup:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+company_files/marketing/documents:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 ..
+
+=== FILE PERMISSIONS SUMMARY ===
+HR Department:
+total 20
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 04:59 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+-rw-r----- 1 ahmer ahmer   21 Jun 22 04:59 benefits.txt
+-rw-r----- 1 ahmer ahmer   28 Jun 22 04:57 employees.txt
+-rw-r----- 1 ahmer ahmer   21 Jun 22 04:58 reviews.txt
+
+IT Department:
+total 20
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:00 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+-rw-r----- 1 ahmer ahmer   16 Jun 22 05:00 network.txt
+-rw------- 1 ahmer ahmer   25 Jun 22 05:00 security.txt
+-rw-r----- 1 ahmer ahmer   22 Jun 22 05:00 servers.txt
+
+Finance Department:
+total 20
+drwxr-x--- 2 ahmer ahmer 4096 Jun 22 05:00 .
+drwxr-x--- 5 ahmer ahmer 4096 Jun 22 04:54 ..
+-rw------- 1 ahmer ahmer   22 Jun 22 05:00 budget.txt
+-rw------- 1 ahmer ahmer   17 Jun 22 05:00 expenses.txt
+-rw------- 1 ahmer ahmer   19 Jun 22 05:00 taxes.txt
+
+Marketing Department:
+total 8
+drwxr-xr-x 2 ahmer ahmer 4096 Jun 22 04:54 .
+drwxr-xr-x 5 ahmer ahmer 4096 Jun 22 04:54 ..
+ahmer@DESKTOP-VMOL2O5:~/bootcamp/company_files$
+
